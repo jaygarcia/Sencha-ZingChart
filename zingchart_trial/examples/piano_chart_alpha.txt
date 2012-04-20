@@ -1,0 +1,152 @@
+{
+    "type":"piano",
+    "background-image":"images/weather-bg.png",
+    "plotarea":{
+        "background-color":"-1",
+        "border-width":0,
+        "fill-type":"linear",
+        "margin":"40 20 75 55"
+    },
+    "title":{
+        "text":"Denver Average Monthly Weather (in days)",
+        "background-color":"-1",
+        "bold":true,
+        "font-family":"arial",
+        "font-size":"16px",
+        "text-align":"left",
+        "font-color":"#ffd12f",
+        "margin":"5 52"
+    },
+    "scale-x":{
+        "font-color":"#fff",
+        "line-color":"#fff",
+        "line-width":"2px",
+        "guide":{
+            "alpha":1,
+            "line-color":"#82a0d5",
+            "line-style":"solid"
+        },
+        "item":{
+            "font-color":"#fff",
+			"font-weight":"bold"
+        },
+        "labels":[
+			"Jan",
+			"Feb",
+			"Mar",
+			"Apr",
+			"May",
+			"Jun"
+        ],
+        "tick":{
+            "line-color":"#fff",
+            "line-width":3,
+            "placement":"outer",
+            "size":4
+        },
+        "values":[
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June"
+        ]
+    },
+    "scale-y":{
+        "line-color":"#fff",
+        "line-width":"2px",
+        "visible":true,
+        "guide":{
+            "line-color":"#82a0d5",
+            "alpha":1,
+            "line-style":"solid"
+        },
+        "item":{
+            "font-color":"#fff",
+            "bold":true
+        },
+        "tick":{
+            "size":4,
+            "line-width":3,
+            "line-color":"#fff",
+            "placement":"outer"
+        },
+        "values":[
+			"Rain/<br>Snow",
+			"Cloudy",
+			"Partly<br>Cloudy",
+			"Clear"
+        ]
+    },
+    "labels":[
+		{
+			"text":"data source: http://www.climate-zone.com/climate/united-states/colorado/denver/",
+			"font-color":"#bdd67b",
+			"font-size":"9px",
+			"x":"5px",
+			"y":"383px"
+		}
+    ],
+    "progress":{
+        "background-color":"#eaf0f2",
+        "background-color-3":"#00b0e2",
+        "border-color":"#3e6c7b",
+        "border-width":"1px",
+        "height":"18px",
+        "font-color":"#ff0000",
+        "font-family":"tahoma",
+		"font-weight":"bold",
+        "position":"50% 50%",
+        "width":"240px"
+    },
+    "tooltip":{
+        "alpha":0.7,
+        "background-color":"#1b3e8c",
+        "bevel":false,
+        "border-radius":"15px",
+        "margin":"5 5",
+		"font-weight":"bold",
+        "shadow":true,
+        "shadow-distance":3
+    },
+    "plot":{
+        "animate":1,
+        "aspect":"alpha",
+        "effect":1,
+        "tooltip-text":"%v %y days <br>in %k"
+    },
+    "series":[
+		{
+			"background-image":"images/sleet.png",
+			"background-repeat":false,
+			"background-transparent":true,
+			"text":"Rainy/Snowy Days",
+			"values":[6, 6, 9, 9, 11, 9]
+		},
+		{
+			"background-color":"#fff",
+			"background-image":"images/cloudy.png",
+			"background-repeat":false,
+			"background-transparent":true,
+			"text":"Cloudy Days",
+			"values":[11, 11, 13, 13, 13, 8]
+		},
+		{
+			"background-color":"#fff",
+			"background-image":"images/partly-cloudy.png",
+			"background-repeat":false,
+			"background-transparent":true,
+			"text":"Partly Cloudy",
+			"values":[9, 9, 10, 11, 12, 12]
+		},
+		{
+			"background-color":"#fff",
+			"background-image":"images/sunny.png",
+			"background-repeat":false,
+			"background-transparent":true,
+			"text":"Clear Days",
+			"values":[10, 8, 8, 7, 6, 10]
+		}
+    ]
+}

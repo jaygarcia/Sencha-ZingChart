@@ -1,0 +1,57 @@
+
+
+{
+	"graphset" : [
+		{
+			"type" : "pie",
+			"title" : {
+				"text" : "Pie Chart"
+			},
+			"plotarea" : {
+				"margin-right" : 100
+			},
+			"legend" : {
+			},
+			"scale" : {
+				"size-factor" : 0.5
+			},
+			"tooltip" : {
+				"padding" : "6",
+				"border-radius" : "6"
+			},
+			"plot" : {
+				"ref-angle" : 0,
+				"slice" : 10
+			},
+			"series" : [
+				{
+					"text" : "Apple",
+					"values" : [614.1,606.3,630.1,646.7]
+				}
+				,
+				{
+					"text" : "Pear",
+					"values" : [557.1,535.6,551,567]
+				}
+				,
+				{
+					"text" : "Cherry",
+					"values" : [639.3,643.5,630.7,656.7]
+				}
+				,
+				{
+					"text" : "Mango",
+					"values" : [488.6,499.5,498.6,507.8]
+				}
+				,
+				{
+					"text" : "Papaya",
+					"values" : [667,654.6,633.1,660.3]
+				}
+			]
+		}
+	]
+}
+
+
+

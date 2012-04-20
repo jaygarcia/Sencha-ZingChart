@@ -1,0 +1,32 @@
+{
+	"graphset" : [
+		{
+			"type" : "bar3d",
+			"plotarea" : {
+				"margin" : "80 80 50 80"
+			},
+			"plot" : {
+			},
+			"scale-x" : {
+			},
+			"scale-y" : {
+			},
+			"legend" : {
+				"layout" : "float",
+				"margin" : "10 auto auto auto"
+			},
+			"series" : [
+				{
+					"text" : "Data Set 1",
+					"stack" : 1,
+					"values" : [226.6,-223.3,222.6,208.3,-227,240.5,264.8,-266.8,286.6,294.5,289.1]
+				},
+				{
+					"text" : "Data Set 2",
+					"stack" : 1,
+					"values" : [-172.3,182.9,182.7,184.9,-159.4,134,-133.3,129.2,132.2,115.1,-93.3]
+				}
+			]
+		}
+	]
+}

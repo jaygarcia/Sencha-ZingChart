@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zingchart - html5beta</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-language" content="en">
+	<link rel="stylesheet" href="../style.css" />
+	<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../js/md5-min.js"></script>
+	<script type="text/javascript" src="../js/zingchart-html5beta-min.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	zingchart.render({
+		id : 'g1',
+		width : 1000,
+		height : 300,
+		dataurl : 'datetime01.txt'
+	});
+
+	zingchart.render({
+		id : 'g2',
+		width : 1000,
+		height : 300,
+		dataurl : 'datetime02.txt'
+	});
+
+	var ts1 = [];
+	var ts2 = [];
+	var ts3 = [];
+	for (var i=0;i<60;i++) {
+		if (ZC._r_(1, 10) > 7) {
+			ts1.push(
+				[(new Date(2010, 0, 1, 1, i, 0).getTime()), ZC._r_(0, 10)]
+			);
+		}
+		if (ZC._r_(1, 10) > 3) {
+			ts2.push(
+				[(new Date(2010, 0, 1, 1, 40+i, 0).getTime()), ZC._r_(10, 20)]
+			);
+		}
+		ts3.push(
+			[(new Date(2010, 0, 1, 1, 80+i, 0).getTime()), ZC._r_(20, 30)]
+		);
+	}
+
+	var json = {
+		"graphset" : [
+			{
+				"type" : "line",
+				"scale-x" : {
+					"zooming" : 1,
+					"min-value" : (new Date(2010, 0, 1, 0, 30, 0).getTime()),
+					"max-value" : (new Date(2010, 0, 1, 3, 30, 0).getTime()),
+					"step" : "1minute",
+					"transform" : {
+						"item" : {"visible" : 0},
+						"guide" : {"visible" : 0},
+						"type" : "date"
+					}
+				},
+				"guide" : {},
+				"plot" : {
+					"line-width" : 1,
+					"max-nodes" : 10
+				},
+				"series" : [
+					{
+						"values" : ts1
+					},
+					{
+						"values" : ts2
+					},
+					{
+						"values" : ts3
+					}
+				]
+			}
+		]
+	}
+
+	zingchart.render({
+		id : 'g3',
+		width : 1000,
+		height : 300,
+		data : json
+	});
+
+});
+</script>
+
+<div class="g" id="g1"></div>
+<div class="g" id="g2"></div>
+<div class="g" id="g3"></div>
+
+</body>
+</html>

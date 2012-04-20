@@ -1,0 +1,44 @@
+{
+	"graphset" : [
+		{
+			"type" : "bar",
+			"title" : {
+				"text" : "Title"
+			},
+			"plotarea" : {
+			},
+			"scale-x" : {
+				"label" : {
+					"text" : "Scale X"
+				}
+			},
+			"scale-y" : {
+				"label" : {
+					"text" : "Scale Y"
+				}
+			},
+			"plot" : {
+				"stacked" : 1
+			},
+			"series" : [
+				{
+					"values" : [470,627,516,280,731,350,335,594,103,658,788,605,142,739,451,730,650,135,354,333],
+					"text" : "Apple",
+					"border-radius" : "0 10",
+					"hover-state" : {
+						"background-color" : "#f00 #ff0"
+					}
+				}
+				,
+				{
+					"values" : [380,137,474,532,535,286,440,691,569,472,229,525,283,235,170,101,533,166,241,536],
+					"text" : "Orange",
+					"border-radius" : "10 0",
+					"hover-state" : {
+						"background-color" : "#0f0 #0ff"
+					}
+				}
+			]
+		}
+	]
+}

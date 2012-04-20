@@ -1,0 +1,85 @@
+{
+	"type":"venn",
+	"background-color":"#fff #ccc",
+	"fill-type":"radial",
+	"plotarea":{
+		"height":"400px",
+		"width":"400px",
+		"x":"50px",
+		"y":"-50px"
+	},
+	"title":{
+		"text":"The War on Chartjunk",
+		"background-color":"-1",
+		"bold":true,
+		"font-color":"#333333",
+		"font-family":"arial",
+		"font-size":"24px",
+		"margin":"15 0 0 25",
+		"text-align":"left"
+	},
+	"labels":[
+		{
+			"text":"People who<br>build charts",
+			"font-color":"#333333",
+			"font-family":"arial",
+			"font-size":"12px",
+			"font-weight":"bold",
+			"hook":"node:plot=0,index=0,offset-x=-110,offset-y=-90"
+		},
+		{
+			"text":"People who preach<br>Edward Tufte's gospel",
+			"font-color":"#333333",
+			"font-family":"arial",
+			"font-size":"12px",
+			"font-weight":"bold",
+			"hook":"node:plot=1,index=0,offset-x=140,offset-y=55"
+		},
+		{
+			"text":"People who build charts<br>without chartjunk",
+			"font-color":"#333333",
+			"font-family":"arial",
+			"font-size":"12px",
+			"font-weight":"bold",
+			"hook":"node:plot=2,index=0,offset-x=100,offset-y=-50"
+		}
+	],
+	"plot":{
+		"value-box":{
+			"text":"%t",
+			"background-color":"-1",
+			"font-color":"#000",
+			"font-weight":"bold",
+			"type":"all"
+		}
+	},
+	"series":[
+		{
+			"alpha":0.3,
+			"background-color":"#0000ff",
+			"border-color":"#0000ff",
+			"border-width":3,
+			"join":[80],
+			"text":"",
+			"values":[180]
+		},
+		{
+			"alpha":0.3,
+			"background-color":"#ff0000",
+			"border-color":"#ff0000",
+			"border-width":3,
+			"join":[25],
+			"text":"",
+			"values":[130]
+		},
+		{
+			"alpha":0.3,
+			"background-color":"#00ff00",
+			"border-color":"#00ff00",
+			"border-width":3,
+			"join":[15],
+			"text":"",
+			"values":[35]
+		}
+	]
+}

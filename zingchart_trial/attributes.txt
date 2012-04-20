@@ -1,0 +1,1802 @@
+ZingChart Attributes
+--------------------
+
+
+* 3d-aspect [Object]
+	~ angle
+	~ depth
+
+* alpha [Numeric]
+
+* angle [Numeric]
+
+* animate [Boolean]
+
+* animate-type [String]
+
+* ARROW [Object] (abstract)
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ from
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ to
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* arrows [Array]
+	~ ARROW
+
+* background-color [Mixed]
+
+* background-color-2 [Mixed]
+
+* background-color-3 [Mixed]
+
+* background-fit [String]
+
+* background-image [String]
+
+* background-position [Mixed]
+
+* background-repeat [Boolean]
+
+* background-transparent [Boolean]
+
+* bevel [Boolean]
+
+* bevel-angle [Numeric]
+
+* bevel-blur-x [Mixed]
+
+* bevel-blur-y [Mixed]
+
+* bevel-distance [Mixed]
+
+* bold [Boolean]
+
+* border-color [String]
+
+* border-radius [Mixed]
+
+* border-width [Mixed]
+
+* chart [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ italic
+	~ layout
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* click-marker [Object]
+
+* csv [String]
+
+* decimals [Numeric]
+
+* decimals-separator []
+
+* depth [Mixed]
+
+* drag-handler [String]
+
+* draggable [Boolean] (legend)
+
+* effect [Numeric]
+
+* exact [Boolean]
+
+* fill-angle [Numeric]
+
+* fill-offset-x [Mixed]
+
+* fill-offset-y [Mixed]
+
+* fill-type [String]
+
+* fixed [Boolean] (lens)
+
+* font-angle [Numeric]
+
+* font-color [String]
+
+* font-family [String]
+
+* font-size [Mixed]
+
+* font-style [String]
+
+* font-weight [String]
+
+* footer [Object] (legend)
+	~ text
+
+* format [String]
+
+* from [String]
+
+* GRAPH [Object] (abstract)
+	~ 3d-aspect
+	~ animate-type
+	~ arrows
+	~ chart
+	~ csv
+	~ guide
+	~ height
+	~ images
+	~ labels
+	~ legend
+	~ lens
+	~ live-zoom
+	~ notes
+	~ plot
+	~ preview
+	~ refresh
+	~ scale-k
+	~ scale-r
+	~ scale-v
+	~ scale-x
+	~ scale-y
+	~ scroll-x
+	~ scroll-y
+	~ series
+	~ stacked
+	~ title
+	~ tooltip
+	~ type
+	~ width
+
+* graphset [Array]
+	~ GRAPH
+
+* guide [Object] (GRAPH)
+	~ marker
+	~ scale-label
+	~ text
+	~ value-label
+
+* guide [Object] (SCALE)
+	~ background-color-3
+
+* handler [Object]
+
+* header [Object] (legend)
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* height [Mixed]
+
+* highlight [Boolean]
+
+* highlight-plots [Boolean]
+
+* history [Object]
+
+* hook [String]
+
+* hover-marker [Object]
+
+* icon [Object]
+
+* IMAGE [Object] (abstract)
+
+* images [Array]
+	~ IMAGE
+
+* inherit-style [Boolean]
+
+* italic [Boolean]
+
+* item [Object] (legend)
+	~ background-color
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ font-family
+	~ font-size
+	~ font-weight
+	~ rules
+	~ text-align
+
+* item [Object]
+
+* LABEL [Object] (abstract)
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ hook
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* label [Object] (lens)
+	~ font-family
+
+* labels [Array] (scale)
+
+* labels [Array] (GRAPH)
+	~ LABEL
+
+* layout [String]
+
+* legend [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ drag-handler
+	~ draggable
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ footer
+	~ header
+	~ height
+	~ highlight-plots
+	~ italic
+	~ item
+	~ layout
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ minimize
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ show-markers
+	~ size
+	~ text-decoration
+	~ toggle-plots
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* lens [Object]
+	~ fixed
+	~ label
+	~ preview
+	~ zoom-factor
+
+* line-color [String]
+
+* line-dashed [Boolean]
+
+* line-dotted [Boolean]
+
+* line-gap-size [Mixed]
+
+* line-segment-size [Mixed]
+
+* line-width [Mixed]
+
+* live-zoom [Boolean]
+
+* MAIN [Object] (abstract)
+	~ graphset
+	~ history
+	~ layout
+	~ query-server
+	~ query-string
+	~ show-2d3d-switch
+	~ show-bug-report
+	~ show-full-screen
+	~ show-preloader
+	~ show-print
+	~ show-progress
+	~ show-reload
+	~ zoom-wheel
+	~ zoom-wheel-key
+
+* margin [Mixed]
+
+* margin-bottom [Mixed]
+
+* margin-left [Mixed]
+
+* margin-right [Mixed]
+
+* margin-top [Mixed]
+
+* MARKER [Object] (abstract) (SCALE)
+	~ range
+
+* marker [Object] (guide)
+
+* marker [Object] (PLOT)
+
+* markers [Array] (SCALE)
+	~ MARKER
+
+* masked-nodes [Boolean]
+
+* max-labels [Numeric]
+
+* max-nodes [Numeric]
+
+* max-ticks [Numeric]
+
+* max-value [Mixed]
+
+* min-value [Mixed]
+
+* minimize [Boolean]
+
+* minor-guide [Object]
+
+* minor-tick [Object]
+	~ placement
+
+* minor-ticks [Numeric]
+
+* mirrored [Boolean]
+
+* multiplier [Boolean]
+
+* NOTE [Object] (abstract)
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ hook
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* notes [Array] (GRAPH)
+	~ NOTE
+
+* notes [Array] (PLOT)
+
+* offset-end [Mixed]
+
+* offset-r [Mixed]
+
+* offset-start [Mixed]
+
+* offset-x [Mixed]
+
+* offset-y [Mixed]
+
+* placement [String] (VALUE-BOX)
+
+* placement [String] (TICKS)
+
+* PLOT [Object] (abstract)
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ click-marker
+	~ exact
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ highlight
+	~ hover-marker
+	~ icon
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ marker
+	~ masked-nodes
+	~ max-nodes
+	~ notes
+	~ offset-x
+	~ offset-y
+	~ preview
+	~ scales
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ stacked
+	~ target
+	~ text
+	~ text-decoration
+	~ tooltip-text
+	~ type
+	~ underline
+	~ url
+	~ value-box
+	~ values
+	~ visible
+	~ width
+	~ x
+	~ y
+	~ z-index
+
+* plot [Object]
+	~ background-color-2
+	~ click-marker
+	~ hover-marker
+	~ icon
+	~ marker
+	~ max-nodes
+	~ notes
+	~ target
+	~ text
+	~ url
+	~ value-box
+
+* position [Mixed]
+
+* preview [Object] (GRAPH)
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ handler
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* preview [Object] (lens)
+
+* preview [Boolean] (PLOT)
+
+* query-server [Boolean]
+
+* query-string [String]
+
+* range [Array]
+
+* ref-line [Object]
+
+* ref-value [Mixed]
+
+* refresh [Object]
+	~ type
+	~ url
+
+* reset-timeout [Numeric]
+
+* RULE [Object] (abstract)
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ rule
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-align
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* rule [String]
+
+* rules [Array]
+	~ RULE
+
+* scale-k [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ decimals
+	~ decimals-separator
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ format
+	~ guide
+	~ italic
+	~ item
+	~ labels
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ markers
+	~ max-labels
+	~ max-value
+	~ min-value
+	~ minor-guide
+	~ minor-tick
+	~ minor-ticks
+	~ mirrored
+	~ multiplier
+	~ offset-end
+	~ offset-start
+	~ offset-x
+	~ offset-y
+	~ ref-line
+	~ ref-value
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text
+	~ text-decoration
+	~ thousands-separator
+	~ tick
+	~ ticks
+	~ underline
+	~ values
+	~ visible
+	~ width
+	~ x
+	~ y
+	~ zoom-snap
+	~ zoom-to
+	~ zooming
+
+* scale-label [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* scale-r [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ decimals
+	~ decimals-separator
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ format
+	~ guide
+	~ italic
+	~ item
+	~ labels
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ markers
+	~ max-labels
+	~ max-value
+	~ min-value
+	~ minor-guide
+	~ minor-tick
+	~ minor-ticks
+	~ mirrored
+	~ multiplier
+	~ offset-end
+	~ offset-start
+	~ offset-x
+	~ offset-y
+	~ ref-line
+	~ ref-value
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text
+	~ text-decoration
+	~ thousands-separator
+	~ tick
+	~ ticks
+	~ underline
+	~ values
+	~ visible
+	~ width
+	~ x
+	~ y
+	~ zoom-snap
+	~ zoom-to
+	~ zooming
+
+* scale-v [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ decimals
+	~ decimals-separator
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ format
+	~ guide
+	~ italic
+	~ item
+	~ labels
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ markers
+	~ max-labels
+	~ max-value
+	~ min-value
+	~ minor-guide
+	~ minor-tick
+	~ minor-ticks
+	~ mirrored
+	~ multiplier
+	~ offset-end
+	~ offset-start
+	~ offset-x
+	~ offset-y
+	~ ref-line
+	~ ref-value
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text
+	~ text-decoration
+	~ thousands-separator
+	~ tick
+	~ ticks
+	~ underline
+	~ values
+	~ visible
+	~ width
+	~ x
+	~ y
+	~ zoom-snap
+	~ zoom-to
+	~ zooming
+
+* scale-x [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ decimals
+	~ decimals-separator
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ format
+	~ guide
+	~ italic
+	~ item
+	~ labels
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ markers
+	~ max-labels
+	~ max-value
+	~ min-value
+	~ minor-guide
+	~ minor-tick
+	~ minor-ticks
+	~ mirrored
+	~ multiplier
+	~ offset-end
+	~ offset-start
+	~ offset-x
+	~ offset-y
+	~ ref-line
+	~ ref-value
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text
+	~ text-decoration
+	~ thousands-separator
+	~ tick
+	~ ticks
+	~ underline
+	~ values
+	~ visible
+	~ width
+	~ x
+	~ y
+	~ zoom-snap
+	~ zoom-to
+	~ zooming
+
+* scale-y [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ decimals
+	~ decimals-separator
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ format
+	~ guide
+	~ italic
+	~ item
+	~ labels
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ markers
+	~ max-labels
+	~ max-value
+	~ min-value
+	~ minor-guide
+	~ minor-tick
+	~ minor-ticks
+	~ mirrored
+	~ multiplier
+	~ offset-end
+	~ offset-start
+	~ offset-x
+	~ offset-y
+	~ ref-line
+	~ ref-value
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text
+	~ text-decoration
+	~ thousands-separator
+	~ tick
+	~ ticks
+	~ underline
+	~ values
+	~ visible
+	~ width
+	~ x
+	~ y
+	~ zoom-snap
+	~ zoom-to
+	~ zooming
+
+* scales [String]
+
+* scroll-x [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* scroll-y [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* series [Array]
+	~ PLOT
+
+* shadow [Boolean]
+
+* shadow-alpha [Numeric]
+
+* shadow-angle [Numeric]
+
+* shadow-blur-x [Mixed]
+
+* shadow-blur-y [Mixed]
+
+* shadow-color [Mixed]
+
+* shadow-distance [Mixed]
+
+* show-2d3d-switch [Boolean]
+
+* show-bug-report [Boolean]
+
+* show-full-screen [Boolean]
+
+* show-markers [Boolean]
+
+* show-preloader [Boolean]
+
+* show-print [Boolean]
+
+* show-progress [Boolean]
+
+* show-reload [Boolean]
+
+* size [Mixed]
+
+* speed [Numeric]
+
+* stacked [Boolean]
+
+* stop-timeout [Numeric]
+
+* target [String] (PLOT)
+
+* text [String]
+
+* text [String] (guide)
+
+* text [Mixed] (value-box)
+
+* text-align [String]
+
+* text-decoration [String]
+
+* thousands-separator [String]
+
+* tick [Object]
+	~ placement
+
+* ticks [Numeric]
+
+* title [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* to [String]
+
+* toggle-plots [Boolean]
+
+* tooltip [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ inherit-style
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text-decoration
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* tooltip-text [String]
+
+* type [String] (GRAPH)
+
+* type [String] (refresh)
+
+* type [Mixed] (value-box)
+
+* type [String] (PLOT)
+
+* underline [Boolean]
+
+* url [String] (refresh)
+
+* url [String] (PLOT)
+
+* value-box [Object]
+	~ alpha
+	~ background-color
+	~ background-color-2
+	~ background-color-3
+	~ background-fit
+	~ background-image
+	~ background-position
+	~ background-repeat
+	~ background-transparent
+	~ bevel
+	~ bevel-angle
+	~ bevel-blur-x
+	~ bevel-blur-y
+	~ bevel-distance
+	~ bold
+	~ border-color
+	~ border-radius
+	~ border-width
+	~ fill-angle
+	~ fill-offset-x
+	~ fill-offset-y
+	~ fill-type
+	~ font-angle
+	~ font-color
+	~ font-family
+	~ font-size
+	~ font-style
+	~ font-weight
+	~ italic
+	~ line-color
+	~ line-dashed
+	~ line-dotted
+	~ line-gap-size
+	~ line-segment-size
+	~ line-width
+	~ live-zoom
+	~ margin
+	~ margin-bottom
+	~ margin-left
+	~ margin-right
+	~ margin-top
+	~ offset-x
+	~ offset-y
+	~ placement
+	~ shadow
+	~ shadow-alpha
+	~ shadow-angle
+	~ shadow-blur-x
+	~ shadow-blur-y
+	~ shadow-color
+	~ shadow-distance
+	~ size
+	~ text
+	~ text-decoration
+	~ type
+	~ underline
+	~ visible
+	~ width
+	~ x
+	~ y
+
+* value-label [Object]
+	~ font-family
+
+* values [Array] (SCALE)
+
+* values [Array] (PLOT)
+
+* visible [Boolean]
+
+* width [Mixed]
+
+* x [Mixed]
+
+* y [Mixed]
+
+* z-index [Numeric]
+
+* zoom-factor [Numeric]
+
+* zoom-snap [Boolean]
+
+* zoom-to [Array]
+
+* zoom-wheel [Boolean]
+
+* zoom-wheel-key [String]
+
+* zooming [Boolean]
+

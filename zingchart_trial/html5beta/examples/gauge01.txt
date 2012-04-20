@@ -1,0 +1,67 @@
+{
+    "graphset" : [
+        {
+            "type" : "gauge",
+            "title" : {
+                "text" : "Gauge"
+            },
+            "legend" : {
+            },
+            "plotarea" : {
+            },
+		    "scale" : {
+		    	"size-factor" : 0.8
+		    },
+            "scale-r" : {
+				"values" : "0:160:20",
+				"aperture" : 180,
+				"ref-angle" : 270,
+				"border-color" : "#666666",
+				"border-width" : "1",
+	            "tick" : {
+	            	"placement" : "inner",
+					"size" : 10,
+					"line-color" : "#00ffff",
+					"line-width" : 2
+				},
+	            "center" : {
+	            	"size" : 10,
+	            	"background-color" : "#ffffff #bbbbbb",
+	            	"border-color" : "#cccccc",
+	            	"border-width" : "1",
+	            	"fill-type" : "radial",
+	            	"fill-offset-x" : -5,
+	            	"fill-offset-y" : -5
+	            },
+	            "ring" : {
+	            	"size" : 15,
+	            	"alpha" : 0.8,
+	            	"items" : [
+	            		{
+	            			"background-color" : "#0fc"
+	            		},
+	            		{
+	            			"background-color" : "#39f"
+	            		}
+	            	]
+	            }
+            },
+		    "plot" : {
+				"csize" : 5,
+				"tooltip-text" : "%v (C)"
+		    },
+            "series" : [
+                {
+					"size" : 100,
+                    "values" : [110],
+                    "text" : "Avg. Oil Temp."
+                },
+                {
+					"size" : 120,
+                    "values" : [90],
+                    "text" : "Avg. Water Temp."
+                }
+            ]
+        }
+    ]
+}

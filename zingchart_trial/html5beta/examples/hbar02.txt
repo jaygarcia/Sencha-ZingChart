@@ -1,0 +1,38 @@
+{
+	"theme" : "none",
+	"graphset" : [
+		{
+			"type" : "hbar",
+			"title" : {
+				"text" : "HBar Chart"
+			},
+			"plotarea" : {
+			},
+			"scale-x" : {
+				"label" : {
+					"text" : "Scale X"
+				}
+			},
+			"scale-y" : {
+				"label" : {
+					"text" : "Scale Y"
+				}
+			},
+			"plot" : {
+				"border-radius-top-right" : 10,
+				"border-radius-bottom-right" : 10
+			},
+			"series" : [
+				{
+					"values" : [420.9,432.5,462.9,512.2,567],
+					"text" : "Apple"
+				}
+				,
+				{
+					"values" : [73.6,60.8,33.7,44.8,104.4],
+					"text" : "Orange"
+				}
+			]
+		}
+	]
+}

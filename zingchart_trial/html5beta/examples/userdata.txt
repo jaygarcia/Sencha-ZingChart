@@ -1,0 +1,26 @@
+{
+	"type" : "bar",
+	"scale-x" : {
+	},
+	"scale-y" : {
+	},
+	"plot" : {
+	},
+	"series" : [
+		{
+			"values" : [9,23,40],
+			"data-fname" : ["Peter", "Steve", "David"],
+			"data-lname" : ["Gabriel", "Hogarth", "Gilmour"],
+			"tooltip-text" : "%v songs written by %data-fname %data-lname",
+			"url" : "http://www.google.com/#q=%data-fname %data-lname",
+			"target" : "_blank"
+		},
+		{
+			"values" : [17,29,5],
+			"data-band" : ["Genesis", "Marillion", "Pink Floyd"],
+			"tooltip-text" : "%v albums made by %data-band",
+			"url" : "http://www.google.com/#q=%data-band",
+			"target" : "_blank"
+		}
+	]
+}

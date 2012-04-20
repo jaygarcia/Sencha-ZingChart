@@ -1,0 +1,150 @@
+{
+    "type":"bar",
+    "background-color":"#252525",
+    "border-color":"#ccc",
+    "border-width":"8px",
+    "plotarea":{
+        "border-width":0,
+        "margin":"60 20 80 40"
+    },
+    "title":{
+        "text":"Twitter Desktop App Market Share",
+        "background-color":"-1",
+        "font-color":"#ffffff",
+        "font-size":"23px",
+        "margin":"10 0 0 20",
+        "text-align":"left"
+    },
+    "legend":{
+        "background-color":"-1",
+        "border-width":0,
+        "layout":"horizontal",
+        "margin-bottom":"15px",
+        "position":"75% 100%",
+        "shadow":false,
+        "width":"220px",
+        "item":{
+            "font-color":"#ffffff",
+            "border-width":0,
+            "font-weight":"bold"
+        }
+    },
+    "tooltip":{
+        "border-radius":"10px",
+        "font-weight":"bold",
+        "margin":"10 10 10 10"
+    },
+    "scale-x":{
+        "font-size":"11px",
+        "line-width":0,
+        "max-labels":20,
+        "offset-end":"5px",
+        "offset-start":"5px",
+        "guide":{
+            "line-width":0
+        },
+        "item":{
+            "font-angle":315,
+            "font-color":"#ffffff",
+            "offset-y":"25px"
+        },
+        "tick":{
+            "line-width":0
+        },
+        "values":[
+			"Sep 08",
+			"Oct 08",
+			"Nov 08",
+			"Dec 08",
+			"Jan 09",
+			"Feb 09",
+			"Mar 09",
+			"Apr 09",
+			"May 09",
+			"Jun 09",
+			"Jul 09",
+			"Aug 09",
+			"Sep 09",
+			"Oct 09",
+			"Nov 09",
+			"Dec 09"
+        ]
+    },
+    "scale-y":{
+        "decimals":1,
+        "line-width":0,
+        "thousands-separator":".",
+        "guide":{
+            "line-color":"#eeeeee",
+            "line-gap-size":0,
+            "line-width":"1px"
+        },
+        "item":{
+            "font-color":"#ffffff",
+            "font-weight":"bold"
+        },
+        "tick":{
+            "line-width":0
+        }
+    },
+    "labels":[
+		{
+			"text":"Apps and data are fictional and for visualization purposes only",
+			"font-color":"#999999",
+			"font-size":"9px",
+			"x":"10px",
+			"y":"337px"
+		}
+    ],
+    "plot":{
+        "margin-left":"3px",
+        "margin-right":"3px",
+        "tooltip-text":"%v %"
+    },
+    "series":[
+		{
+			"background-color":"#3F7098",
+			"text":"TwitterMania",
+			"values":[
+				2.3,
+				2.8,
+				3.2,
+				3.5,
+				3.7,
+				3.3,
+				3.1,
+				3.5,
+				3.6,
+				3.2,
+				4.3,
+				4.3,
+				4.4,
+				4.2,
+				4.3,
+				4.6
+			]
+		},
+		{
+			"text":"TweetPerfect",
+			"background-color":"#849F42",
+			"values":[
+				1.3,
+				1.2,
+				1.5,
+				1.4,
+				1.6,
+				1.8,
+				1.7,
+				1.8,
+				2.5,
+				2.6,
+				2.7,
+				2.7,
+				3.2,
+				3.6,
+				3.9,
+				4.6
+			]
+		}
+    ]
+}

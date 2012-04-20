@@ -1,0 +1,163 @@
+{
+	"type":"area",
+	"alpha":0.5,
+	"background-color":"#fff",
+	"border-color":"#404040",
+	"border-width":1,
+	"margin":"10 10 10 10",
+	"plotarea":{
+		"margin":"60 40 80 60",
+		"border-width":0
+	},
+	"title":{
+		"text":"Virtucon Expenditures (millions of dollars)",
+		"background-color":-1,
+		"font-color":"black",
+		"font-size":"20px",
+		"font-weight":"bold",
+		"margin-top":"10px"
+	},
+	"scale-x":{
+		"line-color":"gray",
+		"line-width":"1px",
+		"guide":{
+		   "line-width":0
+		},
+		"item":{
+		   "color":"#404040",
+		   "offset-y":"10px"
+		},
+		"tick":{
+		   "line-width":"1px",
+		   "size":"4px"
+		},
+		"values":[
+		   "Dec '06",
+		   "",
+		   "Jun. '07",
+		   "",
+		   "Dec '07",
+		   "",
+		   "Jun. '08",
+		   "",
+		   "Dec '08",
+		   "",
+		   "Jun. '09",
+		   "",
+		   "Dec '09"
+		]
+	},
+	"scale-y":{
+		"alpha":"0.5",
+		"format":"$%v",
+		"line-color":"gray",
+		"line-width":"1px",
+		"values":"0:16:2",
+		"guide":{
+		   "alpha":"0.5",
+		   "line-color":"gray",
+		   "line-gap-size":5,
+		   "line-style":"dashed",
+		   "line-width":"1px"
+		},
+		"item":{
+		   "color":"#404040",
+		   "offset-x":"-5px"
+		},
+		"tick":{
+		   "alpha":"0.5",
+		   "line-color":"gray",
+		   "line-width":"1px",
+		   "size":"4px"
+		}
+	},
+	"labels":[
+	{
+	   "text":"Source: Number 2, CEO Virtucon",
+	   "color":"#000",
+	   "font-size":"10px",
+	   "x":"65px",
+	   "y":"470px"
+	},
+	{
+	   "text":"Alan Parsons<br/>Project",
+	   "hook":"node:plot=0,index=12,offset-x=-75,offset-y=148",
+	   "color":"#fff",
+	   "font-size":"12px",
+	   "font-weight":"bold"
+	},
+	{
+	   "text":"Moon Base Design",
+	   "hook":"node:plot=1,index=10,offset-x=-12,offset-y=20",
+	   "color":"#fff",
+	   "font-size":"12px",
+	   "font-weight":"bold"
+	},
+	{
+	   "text":"Volcanic Lair Construction",
+	   "hook":"node:plot=2,index=8,offset-x=65,offset-y=30",
+	   "color":"#fff",
+	   "font-size":"12px",
+	   "font-weight":"bold"
+	},
+	{
+	   "text":"Sharks with Laser Beams",
+	   "hook":"node:plot=3,index=6,offset-x=125,offset-y=20",
+	   "color":"#fff",
+	   "font-size":"12px",
+	   "font-weight":"bold"
+	},
+	{
+	   "text":"Miniature Cloning",
+	   "hook":"node:plot=4,index=2,offset-x=305,offset-y=12",
+	   "color":"#fff",
+	   "font-size":"12px",
+	   "font-weight":"bold"
+	}
+	],
+	"plot":{
+		"alpha-area":1,
+		"highlight":false,
+		"line-width":0,
+		"marker":{
+			"type":"none"
+		}
+	},
+	"series":[
+		{
+		   "background-color":"#008000",
+		   "text":"Alan Parsons Project",
+		   "values":[
+			  8, 7.6, 8.8, 9.4, 10.4, 9, 9.8, 11.8, 11.9, 10, 9.8, 12, 15.8
+		   ]
+		},
+		{
+		   "background-color":"#FFA621",
+		   "text":"Moon Base Design",
+		   "values":[
+			  7, 5.6, 5.7, 6.1, 9.7, 7.6, 7.6, 7.6, 9, 7.5, 7.5, 8, 10.1
+		   ]
+		},
+		{
+		   "text":"Volcanic Lair Construction",
+		   "background-color":"#FF6600",
+		   "values":[
+			  4.7, 3, 2.9, 3, 5.8, 5.8, 4.6, 4.5, 5.5, 5.2, 5.1, 5.5, 5.2
+		   ]
+		},
+		{
+		   "background-color":"#FF0000",
+		   "text":"Sharks with Frickin' Laser Beams",
+		   "values":[
+			  2.6, 1.65, 1.6, 1.6, 2, 3.08, 3.05, 3.07, 3.1, 3.15, 3.05,  3.1, 3.2
+		   ]
+		},
+		{
+		   "background-color":"#2D63FF",
+		   "text":"Miniature Cloning",
+		   "values":[
+			  1.3, 1.3, 1.28, 1.31, 0.3, 0.31, 0.31, 1, 1.3, 1.27, 1.26, 1.28, 1.3
+		   ]
+		}
+	]
+}

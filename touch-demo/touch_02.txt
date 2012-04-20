@@ -1,0 +1,17 @@
+{
+	"root" : {
+		"gui" : {
+			"contextMenu" : {
+				"button" : {
+					"visible" : 0
+				}
+			}
+		}
+	},
+	"graph" : {
+		"backgroundColor" : "#fff",
+		"_plotarea" : {
+			"margin" : 5
+		}
+	}
+}

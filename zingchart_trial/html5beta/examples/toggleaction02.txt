@@ -1,0 +1,59 @@
+{
+	"graphset" : [
+		{
+			"type" : "bar",
+			"title" : {
+				"text" : "Legend with toggle-action : remove"
+			},
+			"legend" : {
+				"toggle-action" : "remove"
+			},
+			"plotarea" : {
+				"margin-right" : 120
+			},
+			"scale-x" : {
+			},
+			"scale-y" : {
+			},
+			"plot" : {
+				"stacked" : 1
+			},
+			"series" : [
+				{
+					"values" : [40,32,28,40,36,30],
+					"text" : "Series 1"
+				}
+				,
+				{
+					"values" : [27,54,47,42,52,57],
+					"text" : "Series 2"
+				}
+				,
+				{
+					"values" : [49,62,68,74,55,47],
+					"text" : "Series 3"
+				}
+				,
+				{
+					"values" : [44,22,83,81,94,21],
+					"text" : "Series 4"
+				}
+				,
+				{
+					"values" : [47,26,64,24,45,47],
+					"text" : "Series 5"
+				}
+				,
+				{
+					"values" : [45,95,22,40,83,85],
+					"text" : "Series 6"
+				}
+			]
+		}
+	]
+}
+
+
+
+
+

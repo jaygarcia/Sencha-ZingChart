@@ -1,0 +1,43 @@
+{
+    "graphset" : [
+        {
+            "type" : "hfunnel",
+            "scale-x" : {
+    	       "values" : ["1st\nQuarter", "1st\nQuarter", "3rd\nQuarter", "4th\nQuarter"]
+            },
+		    "tooltip" : {
+		    },
+            "scale-y" : {
+    	       "values" : ["Index", "Sign In", "Add Item", "Checkout", "Purchase"]
+            },
+            "chart" : {
+            	"margin" : "10 10 60 60"
+            },
+            "plot" : {
+            	"tooltip-text" : "%v Actions",
+            	"scales" : "scale-x,scale-y"
+            },
+            "series" : [
+            	{
+            	    "values" : [6543, 8261, 7263, 9281]
+            	}
+            	,
+            	{
+            	    "values" : [5423, 6344, 5433, 8111]
+            	}
+            	,
+            	{
+            	    "values" : [3212, 4322, 3433, 4522]
+            	}
+            	,
+            	{
+            	    "values" : [2322, 3111, 2011, 2522]
+            	}
+            	,
+            	{
+            	    "values" : [1000, 928, 822, 1202]
+            	}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+
+{
+	"graphset" : [
+		{
+			"type" : "pie",
+			"title" : {
+				"text" : "Pie Chart"
+			},
+			"plotarea" : {
+			},
+			"scale" : {
+				"size-factor" : 0.8
+			},
+			"tooltip" : {
+				"padding" : "6",
+				"border-radius" : "6"
+			},
+			"plot" : {
+				"ref-angle" : 0,
+				"slice" : 10,
+				"value-box" : {
+					"placement" : "in",
+					"text" : "%v"
+				}
+			},
+			"series" : [
+				{
+					"text" : "Apple<br/>Maple",
+					"values" : [742.8],
+					"hover-state" : {
+						"background-color" : "#000"
+					}
+				}
+				,
+				{
+					"text" : "Pear<br/>Bear",
+					"values" : [773.1],
+					"hover-state" : {
+						"background-color" : "#fc0",
+						"border-width" : 1,
+						"border-color" : "#fff"
+					}
+				}
+				,
+				{
+					"text" : "Cherry<br/>Berry",
+					"values" : [550.4]				}
+				,
+				{
+					"text" : "Mango<br/>Tango",
+					"values" : [618.1]				}
+				,
+				{
+					"text" : "Papaya<br/>Biscaya",
+					"values" : [780.8]				}
+			]
+		}
+	]
+}
+
+
+
+

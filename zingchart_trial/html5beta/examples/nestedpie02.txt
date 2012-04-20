@@ -1,0 +1,49 @@
+
+
+{
+	"graphset" : [
+		{
+			"type" : "nestedpie",
+			"title" : {
+				"text" : "Nested Pie Chart"
+			},
+			"plotarea" : {
+			},
+			"scale" : {
+				"size-factor" : 0.6
+			},
+			"tooltip" : {
+				"padding" : "6",
+				"border-radius" : "6"
+			},
+			"plot" : {
+				"ref-angle" : 0,
+				"slice" : 10,
+				"band-space" : 5,
+				"value-box" : {
+					"placement" : "out",
+					"text" : "%t"
+				}
+			},
+			"series" : [
+				{
+					"text" : "Apple",
+					"values" : [538,687,623,516]
+				}
+				,
+				{
+					"text" : "Pear",
+					"values" : [658,503,597,512]
+				}
+				,
+				{
+					"text" : "Cherry",
+					"values" : [795,544,733,671]
+				}
+			]
+		}
+	]
+}
+
+
+

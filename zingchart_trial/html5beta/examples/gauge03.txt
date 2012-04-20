@@ -1,0 +1,161 @@
+{
+   "graphset":[
+      {
+         "type":"gauge",
+         "border-width":0,
+         "plotarea":{
+            "margin":"20 20 20 20"
+         },
+         "background-color":"#000 #333",
+         "fill-type":"radial",
+         "scale":{
+			"values": [
+				"SpeedTracker"
+				],
+            "item":{
+               "font-color":"white",
+               "font-family":"helvetica",
+               "text-align":"center",
+               "font-size":11,
+               "bold":true,
+               "background-color":"black",
+			   "padding": "2",
+               "offset-y":-80,
+               "offset-x":0
+            }
+         },
+		 "scale-r":{
+            "values":"0:240:20",
+			"size": 160,
+            "aperture":360,
+			"offset-start": "15",
+			"offset-end": "15",
+            "max-items":6,
+            "ref-angle":315,
+            "background-color":"#333 #999",
+			"fill-type": "radial",
+            "border-color":"#666",
+            "border-width":"7",
+            "item":{
+               "padding":"3 3",
+               "font-color":"black",
+               "font-size":12,
+               "font-family":"helvetica",
+               "text-align":"center",
+               "bold":true,
+			   "rules": [
+					{
+					"rule": "%i >= 10",
+					"visible": false
+					}
+			   ]
+            },
+            "tick":{
+               "visible": false,
+			   "placement": "inner",
+               "line-color":"orange",
+               "line-width":2
+            },
+			"center" : {
+	            	"size" : 10,
+	            	"background-color" : "#bbbbbb #000000",
+	            	"border-color" : "#cccccc",
+	            	"border-width" : "1",
+	            	"fill-type" : "radial",
+	            	"fill-offset-x" : -5,
+	            	"fill-offset-y" : -5
+	            },
+            "ring":{
+               "size":15,
+               "alpha":1,
+               "border-width":3,
+               "border-color":"black",
+			   "rules": [
+					{
+					"rule": "%v <=80",
+					"background-color": "lightgreen"
+					},
+					{
+					"rule": "%v >= 80 && %v <= 140",
+					"background-color": "yellow"
+					},
+					{
+					"rule": "%v >= 140 && %v <= 160",
+					"background-color": "orange"
+					},
+					{
+					"rule": "%v >= 160 && %v < 180",
+					"background-color": "red"
+					}
+					,
+					{
+					"rule": "%v >= 180",
+					"background-color": "-1",
+					"border-color": "-1"
+					}
+			   ]
+            }
+         },
+         "plot":{
+            "csize":"10",
+			"tooltip-text": "%t: %vmph<br/>RPMs: %data-rpm",
+			"border-color": "#f00",
+			"border-width": 2
+         },
+         "tooltip":{
+			"border-radius": 15,
+			"border-color": "black",
+			"border-width": "2",
+			"font-color": "black",
+			"font-weight": "bold",
+			"padding": "5",
+			"rules": [
+					{
+					"rule": "%v <=80",
+					"background-color": "lightgreen"
+					},
+					{
+					"rule": "%v >= 80 && %v <= 140",
+					"background-color": "yellow"
+					},
+					{
+					"rule": "%v >= 140 && %v <= 160",
+					"background-color": "orange"
+					},
+					{
+					"rule": "%v >= 160 && %v < 180",
+					"background-color": "red"
+					}
+					,
+					{
+					"rule": "%v >= 180",
+					"background-color": "-1",
+					"border-color": "-1"
+					}
+			   ]
+         },
+         "series":[
+            {
+               "values":[
+                  110
+               ],
+			   "size": "100",
+               "text":"Car 1",
+			   "background-color": "blue",
+			"alpha": 1,
+			"data-rpm": ["3,800"]
+				},
+			{
+               "values":[
+                  145
+               ],
+			   "size": "100",
+               "text":"Car 2",
+			   "background-color": "blue",
+			"alpha": 1,
+			"data-rpm": ["5,100"]
+				}
+         ]
+      }
+   ]
+}

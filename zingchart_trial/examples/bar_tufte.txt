@@ -1,0 +1,92 @@
+{
+    "type":"bar",
+    "background-color":"#fff",
+    "border-color":"-1",
+    "border-width":0,
+    "plotarea":{
+        "border-width":0,
+        "margin":"50 20 80 50"
+    },
+    "title":{
+        "text":"Percentage increase in energy usage <br>by fuel type 1980-2030 (projected)",
+        "background-color":"-1",
+        "bold":false,
+        "font-color":"#000",
+        "font-family":"helvetica",
+        "font-size":"14px",
+        "margin":"10 0 0 48",
+        "text-align":"left"
+    },
+    "tooltip":{
+        "background-color":"#000",
+        "border-color":"#000",
+        "border-width":"1px",
+        "margin":"1px"
+    },
+    "scale-x":{
+        "line-color":"#000",
+        "line-width":"1px",
+        "guide":{
+            "line-width":0
+        },
+        "item":{
+            "font-color":"#000",
+            "offset-y":5
+        },
+        "tick":{
+            "line-width":0
+        },
+        "values":[
+			"Liquids",
+			"Natural Gas",
+			"Coal",
+			"Nuclear",
+			"Renewables"
+        ]
+    },
+    "scale-y":{
+        "decimals":0,
+        "format":"%v%",
+        "line-color":"#000",
+        "line-width":1,
+        "max-labels":2,
+        "thousands-separator":".",
+        "guide":{
+            "alpha":1,
+            "line-color":"#ccc",
+            "line-style":"solid",
+            "line-width":0
+        },
+        "item":{
+            "font-color":"#000"
+        },
+        "tick":{
+            "line-width":0
+        },
+        "values":"0:500:1"
+    },
+    "labels":[
+		{
+			"text":"source: http://www.eia.doe.gov/oiaf/ieo/graphic_data_world.html",
+			"font-color":"#000",
+			"font-size":"9",
+			"x":"48px",
+			"y":"370px"
+		}
+    ],
+    "plot":{
+        "margin-left":"25px",
+        "margin-right":"25px",
+        "shadow":false,
+        "tooltip-text":"%v%"
+    },
+    "series":[
+		{
+			"background-color":"#000",
+			"border-color":"#000",
+			"border-width":"1px",
+			"text":"Positive/No Criticism",
+			"values":[64.66, 193.68, 171.71, 428.95, 254.55]
+		}
+    ]
+}

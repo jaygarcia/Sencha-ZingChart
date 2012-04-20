@@ -1,0 +1,81 @@
+
+{
+	"graphset" : [
+		{
+			"type" : "line",
+			"labels" : [
+				{
+					"text" : "Simple<br />Label",
+					"x" : 100,
+					"y" : 200,
+					"padding" : 5,
+					"background-color" : "#369",
+					"color" : "#fff"
+				}
+				,
+				{
+					"text" : "Label with link!",
+					"url" : "http://www.zingchart.com",
+					"x" : 300,
+					"y" : 120,
+					"padding" : 15,
+					"border-radius" : 8,
+					"background-color" : "#f90",
+					"color" : "#000",
+					"bold" : true,
+					"font-size" : "15"
+				}
+			],
+			"arrows" : [
+				{
+					"size" : 4,
+					"background-color" : "#f90",
+					"border-width" : 0,
+					"from" : {
+						"hook" : "node:index=2",
+						"offset-y" : -10
+					},
+					"to" : {
+						"hook" : "node:index=4",
+						"offset-y" : -10
+					},
+					"label" : {
+						"text" : "Arrow Label",
+						"font-angle" : "inherit",
+						"offset-y" : -14
+					}
+				}
+				,
+				{
+					"size" : 6,
+					"background-color" : "#9f0",
+					"from" : {
+						"hook" : "node:index=7",
+						"offset-y" : 120
+					},
+					"to" : {
+						"hook" : "node:index=7",
+						"offset-y" : 10
+					},
+					"label" : {
+						"text" : "Arrow Label",
+						"background-color" : "#fc0"
+					}
+				}
+			],
+			"plotarea" : {
+			},
+			"scale-x" : {
+			},
+			"scale-y" : {
+			},
+			"plot" : {
+			},
+			"series" : [
+				{
+					"values" : [4,9,3,1,5,2,8,6,7]
+				}
+			]
+		}
+	]
+}

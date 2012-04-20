@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zingchart - html5beta</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-language" content="en">
+	<link rel="stylesheet" href="../style.css" />
+	<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../js/md5-min.js"></script>
+	<script type="text/javascript" src="../js/zingchart-html5beta-min.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	zingchart.render({
+		'id' : 'g1',
+		'width' : 800,
+		'height' : 600,
+		'dataurl' : 'zoom01.txt'
+	});
+});
+</script>
+
+<div class="g" id="g1"></div>
+
+</body>
+</html>
