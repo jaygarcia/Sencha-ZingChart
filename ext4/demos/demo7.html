@@ -1,24 +1,104 @@
 <html>
-	<head>
-		<title>Line Chart Demo (Border Layout)</title>
-		<link rel="stylesheet" type="text/css" href="../extjs-4.1.0-rc3/resources/css/ext-all.css">
+<head>
+    <title>Line Chart Demo (Border Layout)</title>
+    <link rel="stylesheet" type="text/css" href="../extjs-4.1.0-rc3/resources/css/ext-all.css">
 
-		<script type="text/javascript" src="../extjs-4.1.0-rc3/ext-debug.js"></script>
-		<!-- ZingChart -->
-		<script type="text/javascript" src="../zingchart_trial/html5beta/js/jquery-1.4.4.min.js"></script>
-		<script type="text/javascript" src="../zingchart_trial/zingchart-lite-1.1.min.js"></script>
-		<script type="text/javascript" src="../ExtX.ZingChart.js"></script>
-		<script type="text/javascript" src="../zingchart_trial/html5beta/js/zingchart-html5beta-min.js"></script>
-		<!-- Demo -->
-		<script type="text/javascript" src="demo7.js"></script>
-	</head>
-	<body style="background: white;">
-		<div style="padding: 5px; margin-bottom: 20px;">
-			<h1>HTML5 Demo</h1>
-			<p style="padding: 5px;">This demo shows a ExtX.ZingChart.Panel rendered in a border layout</p>
-		</div>
-		<div style="padding: 50px;">
-			<div id="panel"></div>
-		</div>
-	</body>
+    <script type="text/javascript" src="../extjs-4.1.0-rc3/ext-debug.js"></script>
+    <!-- ZingChart -->
+    <script type="text/javascript" src="../zingchart_trial/html5beta/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../zingchart_trial/zingchart-lite-1.1.min.js"></script>
+    <script type="text/javascript" src="../zingchart_trial/html5beta/js/zingchart-html5beta-min.js"></script>
+    <!-- Demo -->        <!-- Demo -->
+    <script type="text/javascript">
+        zingchart.liburl = '../zingchart_trial/zingchart.swf';
+
+        Ext.Loader.setConfig({
+            enabled : true,
+            paths   : {
+                'Ext.ux.zingchart' : '../ux/zingchart/'
+            }
+        });
+
+        Ext.require([
+            'Ext.ux.zingchart.Panel'
+        ]);
+
+        Ext.onReady(function() {
+
+            Ext.create('Ext.Panel', {
+                renderTo : 'panel',
+                title    : 'Panel with border layout using Ext.ux.zingchart.Panel',
+                width    : 640,
+                height   : 480,
+                layout   : 'border',
+                defaults : {
+                    frame       : true,
+                    collapsible : true,
+                    split       : true
+                },
+                items    : [
+                    {
+                        region : 'north',
+                        height : 50,
+                        html   : 'NORTH REGION'
+                    },
+                    {
+                        region : 'west',
+                        width  : 100,
+                        html   : 'WEST REGION'
+                    },
+                    {
+                        region : 'east',
+                        width  : 100,
+                        html   : 'EAST REGION'
+                    },
+                    {
+                        region : 'south',
+                        height : 50,
+                        html   : 'SOUTH REGION'
+                    },
+                    Ext.create('Ext.ux.zingchart.Panel', {
+                        region    : 'center',
+                        title     : 'Line Chart',
+                        chartData : {
+                            graphset : [
+                                {
+                                    type      : "line",
+                                    "scale-x" : {
+                                        "min-value" : 0,
+                                        "max-value" : 11,
+
+                                        "labels" : [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
+                                    },
+                                    series    : [
+                                        {
+                                            values : [ 1, 11, 18, 42, 26, 13, 32, 15, 12, 17, 4, 19 ],
+                                            text   : "Apples"
+                                        },
+                                        {
+                                            values : [ 2, 12, 22, 50, 21, 17, 39, 10, 11, 10, 8, 20 ],
+                                            text   : "Oranges"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    })
+                ]
+            });
+        });
+
+
+    </script>
+</head>
+<body style="background: white;">
+<div style="padding: 5px;">
+    <h1>HTML5 Demo</h1>
+
+    <p style="padding: 5px;">This demo shows a ExtX.ZingChart.Panel rendered in a border layout</p>
+</div>
+<div style="padding-left: 10px;">
+    <div id="panel"></div>
+</div>
+</body>
 </html>

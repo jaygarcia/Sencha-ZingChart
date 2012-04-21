@@ -185,7 +185,7 @@ Ext.define('Ext.ux.zingchart.ChartBase', {
      */
     setChartData : function(data) {
         this.setdata({
-            data : this.prepareChartData(data)
+            data : this.prepareData(data)
         });
     },
     destroy      : function() {

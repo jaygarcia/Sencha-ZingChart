@@ -104,7 +104,7 @@
 		"title":{
 		    "background-color":"#C5C390",
 		    "y" : 0,
-		    "height" : 25,
+		    "height" : 25
         },
 		"scale-x" : {
 			"visible": 1,

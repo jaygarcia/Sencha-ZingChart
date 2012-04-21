@@ -25,11 +25,11 @@
 
             Ext.onReady(function() {
 
-                Ext.create('Ext.ux.zingchart.Window', {
+                Ext.create('Ext.ux.zingchart.Panel', {
                     title    : 'Line Chart',
                     width    : 640,
                     height   : 400,
-//                    renderTo : 'panel',
+                    renderTo : 'panel',
                     chartData     : {
                         graphset : [
                             {
@@ -42,7 +42,7 @@
                                 },
                                 series    : [
                                     {
-                                        values : [ 1, 11, 28, 42, 26, 13, 32, 15, 12, 17, 4, 19 ],
+                                        values : [ 1, 11, 18, 42, 26, 13, 32, 15, 12, 17, 4, 19 ],
                                         text   : "Apples"
                                     },
                                     {
@@ -53,7 +53,7 @@
                             }
                         ]
                     }
-                }).show();
+                });
             });
 
 

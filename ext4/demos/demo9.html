@@ -1,24 +1,390 @@
 <html>
-	<head>
-		<title>Form and Chart Demo</title>
-		<link rel="stylesheet" type="text/css" href="../extjs-4.1.0-rc3/resources/css/ext-all.css">
+<head>
+<title>Form and Chart Demo</title>
+<link rel="stylesheet" type="text/css" href="../extjs-4.1.0-rc3/resources/css/ext-all.css">
+<script type="text/javascript" src="../extjs-4.1.0-rc3/ext-debug.js"></script>
+<!-- ZingChart -->
+<script type="text/javascript" src="../zingchart_trial/html5beta/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="../zingchart_trial/zingchart-lite-1.1.min.js"></script>
+<script type="text/javascript" src="../zingchart_trial/html5beta/js/zingchart-html5beta-min.js"></script>
+<!-- Demo -->
+<script type="text/javascript">
+zingchart.liburl = '../zingchart_trial/zingchart.swf';
 
-		<script type="text/javascript" src="../extjs-4.1.0-rc3/ext-debug.js"></script>
-		<!-- ZingChart -->
-		<script type="text/javascript" src="../zingchart_trial/html5beta/js/jquery-1.4.4.min.js"></script>
-		<script type="text/javascript" src="../zingchart_trial/zingchart-lite-1.1.min.js"></script>
-		<script type="text/javascript" src="../ExtX.ZingChart.js"></script>
-		<script type="text/javascript" src="../zingchart_trial/html5beta/js/zingchart-html5beta-min.js"></script>
-		<!-- Demo -->
-		<script type="text/javascript" src="demo9.js"></script>
-	</head>
-	<body style="background: white;">
-		<div style="padding: 5px;">
-			<h1>Flash Demo</h1>
-			<div style="padding: 5px; margin-bottom: 10px">This demonstrates using an Ext.data.Store for a chart's data series.  The grid is linked to
-			the form on the right.</div>
-			<div style="padding: 5px;">The ExtX.ZingChart.Panel, Form, and Grid are rendered to a div element in the page's HTML.</div>
-			<div id="panel" style="margin-top: 25px; margin-left: 10px;"></div>
-		</div>
-	</body>
+Ext.Loader.setConfig({
+    enabled : true,
+    paths   : {
+        'Ext.ux.zingchart' : '../ux/zingchart/'
+    }
+});
+
+Ext.require([
+    'Ext.ux.zingchart.Panel'
+]);
+
+Ext.onReady(function() {
+    // used by the
+    var chartType = 'pie';
+
+    var barTypeChange = function(button, pressed) {
+
+        if (pressed) {
+            var buttonParent = button.up('#masterPanel'),
+                    grid = buttonParent.down('grid'),
+                    selectedRecord = grid.getSelectionModel().getSelection()[0];
+            chartType = button.chartType;
+            updateChartForRecord(chartType, selectedRecord)
+        }
+    };
+
+    Ext.define('DataModel', {
+        extend : 'Ext.data.Model',
+        fields : [
+            'region',
+            'totalSales',
+            'pcPct',
+            'laptopPct',
+            'tabletsPct',
+            'phonesPct',
+            'softwarePct'
+        ]
+    });
+
+    var dataStore = Ext.create('Ext.data.Store', {
+        idIndex : 0,
+        model   : 'DataModel',
+        proxy   : {
+            type   : 'memory',
+            reader : {
+                type : 'array'
+            }
+        }
+    });
+
+    dataStore.loadData([
+        [ 'North America', 18934598, 15, 25, 11, 35, 14 ],
+        [ 'South America', 8324598, 5, 5, 1, 3, 4 ],
+        [ 'Europe', 15798134, 19, 36, 6, 18, 21 ],
+        [ 'Asia', 13587109, 28, 18, 7, 44, 3 ],
+        [ 'Africa', 1259624, 15, 11, 3, 30, 5 ],
+        [ 'Other', 2239684, 25, 21, 5, 39, 10 ]
+    ]);
+
+    var pctRenderer = function(value) {
+        return value + '%'
+    };
+
+    var gridCfg = {
+        xtype   : 'grid',
+        id      : 'grid',
+        store   : dataStore,
+        flex    : 0.6,
+        columns : {
+            defaults : { flex : 1 },
+            items    : [
+                {
+                    header    : 'Region',
+                    dataIndex : 'region'
+                },
+                {
+                    header    : 'Total sales',
+                    dataIndex : 'totalSales',
+                    width     : 100,
+                    flex      : null,
+                    renderer  : Ext.util.Format.usMoney,
+                    align     : 'center',
+                    sortable  : true
+                },
+                {
+                    header    : 'PCs',
+                    dataIndex : 'pcPct',
+
+                    renderer : pctRenderer,
+                    align    : 'center',
+                    sortable : true
+                },
+                {
+                    header    : 'Laptops',
+                    dataIndex : 'laptopPct',
+                    renderer  : pctRenderer,
+                    align     : 'center',
+                    sortable  : true
+                },
+                {
+                    header    : 'Tablets',
+                    dataIndex : 'tabletsPct',
+                    renderer  : pctRenderer,
+                    align     : 'center',
+                    sortable  : true
+                },
+                {
+                    header    : 'Phones',
+                    dataIndex : 'phonesPct',
+                    renderer  : pctRenderer,
+                    align     : 'center',
+                    sortable  : true
+                },
+                {
+                    header    : 'Software',
+                    dataIndex : 'softwarePct',
+                    renderer  : pctRenderer,
+                    align     : 'center',
+                    sortable  : true
+                }
+            ]
+        }
+    };
+
+    var formCfg = {
+        xtype       : 'form',
+        flex        : 0.4,
+        bodyStyle   : 'padding : 5px',
+        style       : 'padding-left : 5px',
+        layout      : 'anchor',
+        defaultType : 'numberfield',
+        defaults    : {
+            width  : 140,
+            anchor : '100%'
+        },
+        items       : [
+            {
+                fieldLabel : 'Region',
+                name       : 'region',
+                xtype      : 'textfield'
+            },
+            {
+                fieldLabel : 'Total sales',
+                name       : 'totalSales'
+            },
+            {
+                fieldLabel : 'PCs %',
+                name       : 'pcPct'
+            },
+            {
+                fieldLabel : 'Laptops %',
+                name       : 'laptopPct'
+            },
+            {
+                fieldLabel : 'Tablets %',
+                name       : 'tabletsPct'
+            },
+            {
+                fieldLabel : 'Phones %',
+                name       : 'phonesPct'
+            },
+            {
+                fieldLabel : 'Software %',
+                name       : 'softwarePct'
+            }
+        ]
+    };
+
+    var panel = Ext.create('Ext.panel.Panel', {
+        width     : 800,
+        height    : 600,
+        renderTo  : 'panel',
+        itemId    : 'masterPanel',
+        title     : 'Sales data',
+        bodyStyle : 'padding : 5px',
+        layout    : {
+            type  : 'vbox',
+            align : 'stretch'
+        },
+        items     : [
+            {
+                xtype     : 'container',
+                height    : 200,
+                bodyStyle : 'padding : 5px',
+                layout    : {
+                    type  : 'hbox',
+                    align : 'stretch'
+                },
+                items     : [
+                    gridCfg,
+                    formCfg
+                ]
+            },
+            {
+                xtype       : 'zingchartpanel',
+                flex        : 1,
+                id          : 'chart',
+                style       : 'padding-top : 5px',
+                chartData   : {},
+                dockedItems : [
+                    {
+                        xtype  : 'toolbar',
+                        docked : 'top',
+                        items  : [
+                            '<b>Type:</b> ',
+                            {
+                                text         : 'Pie',
+                                chartType    : 'pie',
+                                toggleGroup  : 'chartType',
+                                enableToggle : true,
+                                pressed      : true,
+                                listeners    : {
+                                    toggle : barTypeChange
+                                }
+                            },
+                            '-',
+                            {
+                                text         : 'Bar',
+                                chartType    : 'bar',
+                                toggleGroup  : 'chartType',
+                                enableToggle : true,
+                                listeners    : {
+                                    toggle : barTypeChange
+                                }
+                            },
+                            '-',
+                            {
+                                text         : 'Bar3D',
+                                chartType    : 'bar3d',
+                                toggleGroup  : 'chartType',
+                                enableToggle : true,
+                                listeners    : {
+                                    toggle : barTypeChange
+                                }
+                            },
+                            '-',
+                            {
+                                text         : 'Horizontal Bar',
+                                chartType    : 'hbar',
+                                toggleGroup  : 'chartType',
+                                enableToggle : true,
+                                listeners    : {
+                                    toggle : barTypeChange
+                                }
+                            },
+                            '-',
+                            {
+                                text         : 'Horizontal Bar 3D',
+                                chartType    : 'hbar3d',
+                                toggleGroup  : 'chartType',
+                                enableToggle : true,
+                                listeners    : {
+                                    toggle : barTypeChange
+                                }
+                            },
+                            '-',
+                            {
+                                text         : 'Gauge',
+                                chartType    : 'gauge',
+                                toggleGroup  : 'chartType',
+                                enableToggle : true,
+                                listeners    : {
+                                    toggle : barTypeChange
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        ]
+    });
+
+
+    panel.down('grid').on({
+        select    : function(selModel, record, rowIndex) {
+            var gridParent = this.up('#masterPanel'),
+                    form = gridParent.down('form');
+
+            form.getForm().loadRecord(record);
+
+            updateChartForRecord(chartType, record);
+        },
+        viewready : function(grid) {
+            var gridParent = this.up('panel'),
+                    chart = gridParent.down('zingchartpanel');
+
+            var selectFirstRow = function() {
+                grid.getSelectionModel().selectRow(0)
+            };
+
+            if (chart.ready) {
+                selectFirstRow()
+            }
+            else {
+                chart.on('load', selectFirstRow)
+            }
+        }
+    });
+
+    var updateChartForRecord = function(chartType, record) {
+        var series = [
+            {
+                text   : 'PCs',
+                animate: true,
+                effect : 5,
+                values : [ record.get('pcPct') ]
+            },
+            {
+                text   : 'Laptops',
+                animate: true,
+                effect : 5,
+                values : [ record.get('laptopPct') ]
+            },
+            {
+                text   : 'Tablets',
+                animate: true,
+                effect : 5,
+                values : [ record.get('tabletsPct') ]
+            },
+            {
+                text   : 'Phones',
+                animate: true,
+                effect : 5,
+                values : [ record.get('phonesPct') ]
+            },
+            {
+                text   : 'Software',
+                animate: true,
+                effect : 5,
+                values : [ record.get('softwarePct') ]
+            }
+        ];
+
+        panel.down('zingchartpanel').setChartData({
+            graphset : [
+                {
+                    type : chartType,
+
+                    legend : {},
+                    series : series,
+
+                    "plot" : {
+                        "valueBox" : {
+                            "type"      : "max",
+                            "text"      : "%v%",
+                            "textAlign" : "center",
+                            //"backgroundColor"  : "#ffffff",
+                            "placement" : "out"
+                        }
+                    }
+                }
+            ]
+        });
+    };
+
+})
+;
+
+
+</script>
+</head>
+<body style="background: white;">
+<div style="padding: 5px;">
+    <h1>Flash Demo</h1>
+
+    <div style="padding: 5px; margin-bottom: 10px">This demonstrates using an Ext.data.Store for a chart's data series.
+        The grid is linked to
+        the form on the right.
+    </div>
+    <div style="padding: 5px;">The ExtX.ZingChart.Panel, Form, and Grid are rendered to a div element in the page's
+        HTML.
+    </div>
+    <div id="panel" style="margin-top: 25px; margin-left: 10px;"></div>
+</div>
+</body>
 </html>
