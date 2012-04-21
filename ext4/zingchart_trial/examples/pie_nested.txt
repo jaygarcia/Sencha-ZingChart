@@ -1,0 +1,125 @@
+{
+    "type":"nestedpie",
+    "alpha":1,
+    "background-color":"#ffffff",
+    "background-color-2":"#fde7d3",
+    "border-color":"#fce1c8",
+    "border-width":10,
+    "chart":{
+        "margin":"50 150 5 0",
+        "position":"0% 100%"
+    },
+    "title":{
+        "text":"Favorite Fonts: 2009<br>Outer Ring: <i>Clients</i> | Inner Ring: <i>Designers</i>",
+        "alpha":0,
+        "background-color":"#fffcfa",
+        "background-color-2":"#fffcfa",
+        "font-color":"#f5861f",
+        "font-size":14,
+        "margin":"15 0 10 12",
+        "position":"0% 0%",
+        "text-align":"left"
+    },
+    "legend":{
+        "alpha":".9",
+        "background-color":"#c7c7c7",
+        "background-color-2":"#aeadad",
+        "border-color":"#3e6c7b",
+        "border-width":1,
+        "fixed":true,
+        "margin":"10px",
+        "minimize":false,
+        "position":"100% 0%",
+        "shadow":true,
+        "shadow-alpha":0.3,
+        "shadow-color":"#000000",
+        "shadow-distance":0,
+        "shadow-blur-x":5,
+        "shadow-blur-y":5,
+        "width":"125px",
+        "item":{
+            "border-width":0,
+            "font-color":"#ffffff",
+            "font-size":11,
+            "height":"15px",
+            "margin":"10px"
+        }
+    },
+    "plot":{
+        "highlight":true,
+        "offset":"25px",
+        "tooltip-text":"%v%",
+        "value-box":{
+            "type":"all",
+            "text":"%v%",
+            "color":"#fff",
+            "font-size":10,
+			"offset-r": 20
+        }
+    },
+    "series":[
+		{
+			"values":[
+			11,
+			45
+			],
+			"background-color-1":"#1f709c",
+			"background-color-2":"#1f709c",
+			"text":"Trilby"
+		},
+		{
+			"values":[
+			22,
+			14
+			],
+			"background-color-1":"#29a6ac",
+			"background-color-2":"#29a6ac",
+			"text":"Allumi PTF"
+		},
+		{
+			"values":[
+			35,
+			48
+			],
+			"background-color-1":"#72c77e",
+			"background-color-2":"#72c77e",
+			"text":"Trilogy"
+		},
+		{
+			"values":[
+			33,
+			26
+			],
+			"background-color-1":"#add137",
+			"background-color-2":"#add137",
+			"text":"Calluna"
+		},
+		{
+			"values":[
+			43,
+			13
+			],
+			"background-color-1":"#d4d51d",
+			"background-color-2":"#d4d51d",
+			"text":"Alright Sans"
+		},
+		{
+			"values":[
+			26,
+			17
+			],
+			"background-color-1":"#fece08",
+			"background-color-2":"#fece08",
+			"text":"Giorgio Sans"
+		},
+		{
+			"values":[
+			32,
+			7
+			],
+			"background-color-1":"#f5861f",
+			"background-color-2":"#f5861f",
+			"text":"Biographer"
+		}
+    ]
+}

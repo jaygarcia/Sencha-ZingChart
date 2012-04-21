@@ -1,0 +1,40 @@
+
+
+
+{
+	"graphset":[
+    	{
+	        "type":"radar",
+	        "title":{
+	            "text":"Radar Chart"
+	        },
+	        "scale":{
+	        	"size-factor" : 0.75
+	        },
+	        "scale-k":{
+	            "values":["January","February","March","April","May","June","July","August","September","October","November","December"],
+	            "aspect" : "star"
+	        },
+	        "scale-v":{
+	        	"max-items" : 5,
+	            "offset-start":20
+	        },
+	        "plot":{
+	        	"aspect" : "area"
+	        },
+	        "series":[
+	            {
+	                "values" :[5,30,22,38,27,22,36,5,5,14,19,27]
+				}
+	            ,
+	            {
+	                "values" :[40,8,20,15,9,30,28,25,12,0,11,8]
+				}
+	        ]
+        }
+    ]
+}
+
+
+
+

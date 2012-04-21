@@ -1,0 +1,125 @@
+{
+	"type":"bar",
+	"alpha":"0.8",
+	"background-image":"images/bar_creative_images_bg.png",
+	"border-width":"0px",
+	"plotarea":{
+		"alpha":"0",
+		"background-color":"#4b6467 #2a3f42",
+		"border-color":"#173D36",
+		"border-width":"0px",
+		"margin":"80 55 55 55"
+	},
+	"legend":{
+		"alpha":"0.5",
+		"background-color":"-1",
+		"border-width":"0px",
+		"layout":"horizontal",
+		"margin":"80 5 0 50",
+		"shadow":false,
+		"width":"425px",
+		"item":{
+		   "font-color":"#3b6b8e",
+		   "border-width":"0px",
+		   "size": 6,
+		   "background-transparent":true,
+		   "width":"25px",
+		   "height":"25px",
+		   "bold":true
+		}
+	},
+	"scale-x":{
+		"line-color":"#8a8a8a",
+		"line-width":"2px",
+		"zooming":true,
+		"guide":{
+		   "line-width":"0px",
+		   "line-color":"#ececd4"
+		},
+		"item":{
+		   "font-color":"#3b6b8e"
+		},
+		"minor-tick":{
+		   "line-color":"#ececd4",
+		   "line-width":1
+		},
+		"tick":{
+		   "line-color":"#ececd4",
+		   "line-width":1
+		},
+		"values":"2007:2008:1"
+	},
+	"scale-y":{
+		"line-color":"#8a8a8a",
+		"line-width":"2px",
+		"zooming":false,
+		"guide":{
+		   "line-color":"#ececd4",
+		   "line-gap-size":0,
+		   "line-width":"1px"
+		},
+		"item":{
+		   "font-color":"#3b6b8e"
+		},
+		"minor-tick":{
+		   "line-color":"#ececd4",
+		   "line-width":"1px"
+		},
+		"ref-line":{
+		   "visible":false
+		},
+		"tick":{
+		   "line-color":"#ececd4",
+		   "line-width":"1px"
+		}
+	},
+	"scroll-x":{},
+	"tooltip":{
+		"visible":true
+	},
+	"plot":{
+		"animate":1,
+		"background-transparent":true,
+		"effect":1,
+		"marker":{
+			"border-width":0,
+ 		    "shadow":false,
+ 		    "size":0
+		}
+	},
+	"labels":[
+		{
+			"text":"Data is fictional and for demonstration purposes only",
+		    "font-color":"#8a8a8a",
+			"font-size":"9px",
+			"x":"52px",
+			"y":"375px"
+		}
+	],
+	"series":[
+		{        
+		    "text":"ELECTRIC BLUE",
+		    "background-color":"#39a8d8",
+		    "background-image":"images/bar_creative_images_bar1.png",
+		    "values":[
+				120.6, 116.6
+		    ]
+		},
+		{
+		    "text":"MELLOW YELLOW",
+		    "background-color":"#dabc29",
+		    "background-image":"images/bar_creative_images_bar2.png",
+			"values":[
+				171.4, 163.2
+		    ]
+		},
+		{
+			"text":"PUNK PINK",
+			"background-color":"#f54139",
+			"background-image":"images/bar_creative_images_bar3.png",
+		    "values":[
+				215.8, 208.6
+		    ]
+		}
+	]
+}

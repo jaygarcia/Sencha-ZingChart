@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<script type="text/javascript" src="zingchart-1.1.min.js"></script>
+	<style>
+	* { font-family:Segoe UI,Tahoma,Arial;font-size:9pt; }
+	body { margin:0;padding:0; }
+	#main { margin:40px;width:90%;text-align:center;}
+	</style>
+	<script type="text/javascript">
+	window.onload = function() {
+		zingchart.render({
+			dataurl 		: 'index.txt',
+			width			: 1000,
+			height			: 4000,
+			container 		: 'zingchart',
+			flashvars		: {
+				allowlocal : 0,
+				exportdataurl : 'exportdata.php',
+				exportimageurl : 'exportimage.php'
+			}
+		});
+	}
+	</script>
+</head>
+<body>
+
+<div id="main">
+	<div id="zingchart"></div>
+</div>
+
+</body>
+</html>

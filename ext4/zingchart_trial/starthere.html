@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- yep HTML5, we just love jumping on the bandwagon -->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Getting Started with ZingChart</title>
+
+<link rel="stylesheet" href="http://www.zingchart.com/css/common.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://www.zingchart.com/css/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="http://www.zingchart.com/css/shCore.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://www.zingchart.com/css/shThemeZC.css" type="text/css" media="screen" />
+		
+
+<script type="text/javascript" src="http://www.zingchart.com/scripts/shCore.js"></script>
+<script type="text/javascript" src="http://www.zingchart.com/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="http://www.zingchart.com/scripts/shBrushXml.js"></script>
+<script type="text/javascript"> SyntaxHighlighter.all();</script>
+</head>
+<body>
+	<div id="container">
+	<div id="layout-1col" class="s-content">
+        <div id="layout-1col-left" class="col">
+		<h1>Getting Started with ZingChart</h1> 
+		<h2>Overview</h2> 
+			<p>ZingChart enables you to create fast, modern, powerful charts for web applications. This quick start document will help you build your first ZingChart and point you in the right direction for further exploration.</p>
+		<h2>Requirements</h2>
+			<p>A modern Web browser with Adobe Flash player 9+ is needed to view charts and use online builder, otherwise no particular IDE or programming environment is required to develop with ZingChart.</p>
+		
+		<h2>Quick Start</h2>
+
+		<ol>
+        <li><p>Extract package files into a Web served directory</p>
+        
+        <p><strong style="background-color: black; color: yellow;">Tip</strong> While you can simply access files via a local drive path, given same origin access controls and other browser security restrictions it is preferred to develop using a Web server.</p>
+        </li>
+        <li><p>Create a sample file named <tt>hellozing.html</tt> and include the following code in the &lt;head&gt; tag</p>
+			        <pre class="brush: xml;">
+                    &lt;script type="text/javascript" src="zingchart-1.1.js"&gt;&lt;/script&gt;
+                    &lt;script type="text/javascript"&gt;
+                    window.onload = function(){
+                    	zingchart.render({
+                    		liburl 			: 'zingchart.swf',
+                    		dataurl 		: 'graphfile.txt',
+                    		width	 		: 460,
+                    		height 			: 460,
+                    		container 		: 'zingchart'
+                    	});
+                    }
+                    &lt;/script&gt;
+					</pre>
+                    
+         <p><strong style="background-color: black; color: yellow;">Note</strong>  Your paths may be different depending on where you installed the scripts.</p>
+        </li>
+         
+		<li><p>In <tt>hellozing.html</tt> create a &lt;div&gt; holder for the chart where you want the graph to be displayed.</p>
+                    <pre class="brush: xml;">
+                    &lt;div id="zingchart"&gt;&lt;/div&gt;
+                    </pre>
+		</li>
+		<li><p>Create the graphfile referenced above called graphfile.txt which will contain JSON for your first chart.</p>	
+					<pre class="brush: js;">
+                    {
+                      "graphset" : [
+                      {
+                        "type" : "line",
+                        "series" : [
+                         {
+                            "values" : [5, 10, 15, 5, 10, 5]
+                         }] 
+                      }]
+                    }</pre>
+		  </li>
+          <li><p>Load <tt>hellozing.html</tt> in your browser and you're on your way.</p></li>
+       </ol>
+        <p><strong style="background-color: black; color: yellow;">Tip</strong>  There are numerous ways to include ZingChart configuration including:
+        <ul>
+        	<li>Internal JSON variable</li>
+            <li>External JSON config packet</li>
+            <li>Script API using the <tt>ZcData()</tt> method</li>
+         </ul>
+         <p><br>You also may use simple scripts to bind to HTML tables or integrate into server-side scripts.</p>
+
+        
+		<h2>Next Steps with ZingChart</h2>
+
+		
+		<p>There are many ways you can build great charts in ZingChart and with literally hundreds of options we have, you can design the coolest (or ugliest) charts on the web. Before building more complex charts, familiarize yourself with the <a href="http://www.zingchart.com/builder" target="_blank">online builder</a>, <a href="http://www.zingchart.com/learn/docs" target="_blank"> docs</a> and sample charts. </p>		
+						<ul><p><a href="http://www.zingchart.com/builder" target="_blank"> <b>Builder</b></a><br>
+						The ZingChart builder allows you to toggle hundreds of features and attributes and view both the visual result and JSON code in real time. With the JSON Edit Mode, you can make manual attribute and data changes in addition to using the menu-style builder. Click View in Web Page to see an output of the chart. The builder is a great place to start interactively explore the features of ZingChart or even build a full chart directly. You can always make finishing tweaks to the code after you've copied the JSON into your HTML/.txt file. 
+						</p></ul>
+						
+						<ul><p><a href="http://www.zingchart.com/learn/line/#1-1-139" target="_blank"> <b>Docs</b></a><br>
+						The docs on <a href="http://zingchart.com" target="_blank">zingchart.com</a> make building and editing JSON easy. We've sorted all the charts, topics, and features into menus so you can directly access the specific attributes you're looking for and drop them directly into your code. </p></ul>
+
+						<ul><p><a href="examples" target="_blank"> <b>Sample Charts</b></a><br>
+						We've included a few sample charts in the "examples" folder of your download package to get you started. You may alter the data and JSON attributes however you see fit, and use any of these examples as a platform to build your charts, or just use them as a reference for how to code different styles and features. Both the HTML and .txt files for each of these charts have been included in your download package.<br></p></ul>
+						
+						<h4>Local Quick Start Examples:</h4><br/>
+						
+						<p>Area Chart Examples</p>
+						<li><a href="examples/area_borders_animated.html" target="_blank">Stacked, animated area chart with labels and rounded border </a></li>
+						<li><a href="examples/area_stacked_bgimage.html" target="_blank">Stacked, animated area chart using an background image and guides </a></li>
+						<li><a href="examples/area_labels.html" target="_blank">Area chart with labeled plots</a></li>
+						<li><a href="examples/area_zooming_preview.html" target="_blank">Area chart with guides, preview box, and zooming enabled </a></li><br/>
+						
+						<p>Bar Chart Examples</p>
+						<li><a href="examples/bar_labels_arrows.html" target="_blank">Bar Chart with labels and arrows</a></li>
+						<li><a href="examples/bar_stacked_arrows_images.html" target="_blank">Stacked bar chart with arrows, labels and images</a></li>
+						<li><a href="examples/bar_stacked_labels.html" target="_blank">Stacked bar chart with styled legend and labels attached to nodes </a></li>
+						<li><a href="examples/bar_tooltips_2plots.html" target="_blank">Bar chart with styled tooltips and angled scale-x values</a></li>
+						<li><a href="examples/bar_tufte.html" target="_blank">Tufte-inspired bar chart with minimal styling; tooltips included</a></li>
+						<li><a href="examples/hbar3d_image_valuebox.html" target="_blank">3D horizontal bar chart with valueboxes, highlighting and styled axis labels</a></li>						
+						<br/>
+						
+						
+						<p>Line Chart Examples</p>
+						<li><a href="examples/line_guides_axismarkers.html" target="_blank">Line chart with styled legend and ticks, and scale-x axis markers and guides</a></li>
+						<li><a href="examples/line_linestyling_tufte.html" target="_blank">Tufte-inspired line chart with labels attached to nodes and styled lines</a></li>
+						<li><a href="examples/line_hovermarkers_tooltips.html" target="_blank">Single-series line chart with styled hover-markers and tooltips</a></li>
+						<li><a href="examples/line_markershapes.html" target="_blank">Multi-series line chart with styled markers and matching legend-items</a></li>
+
+						<br/>
+						
+						<p>Piano Chart Examples</p>
+						<li><a href="examples/piano_chart_alpha.html" target="_blank">Piano chart using images and transparency aspect ("alpha")</a></li>
+						<li><a href="examples/piano_chart_brightness.html" target="_blank">Classic piano chart using solid colors and brightness aspect</a></li>
+						<li><a href="examples/piano_chart_rules.html" target="_blank">Rating-style piano chart using rules to call images based on value</a></li>
+
+						<br/>						
+						
+						<p>Pie Chart Examples</p>
+						<li><a href="examples/pie3d_stylelegend_tooltips.html" target="_blank">3D pie chart with styled legend items, animated slices and customized tooltips</a></li>
+						<li><a href="examples/pie_nested.html" target="_blank">Nested pie chart with series highlighting and valueboxes</a></li>
+						
+						<br/>
+						
+						<p>Miscellaneous Chart Examples</p>
+						<li><a href="examples/gauge_4up.html" target="_blank">Styled gauges with multiple plots </a></li>
+						<li><a href="examples/mixed_2yaxes.html" target="_blank">Mixed chart (bar and line plots) with two y-axes</a></li>
+						<li><a href="examples/scatter_axisstyling_legenditems.html" target="_blank">Scatter plot chart with styled axis items (ticks, guides) and legend items </a></li>
+						<li><a href="examples/venn_labels.html" target="_blank">Venn Diagram with labels attached to nodes</a></li>
+
+						<br/>
+						
+						
+		<h2>Submitting Bugs</h2>		
+			<p>As with any awesome software product, you may occasionally be the lucky person who discovers a bug. If so, don't panic; submitting bugs with ZingChart is quick and easy. Of course if you're using the free trial you can panic a little bit, because only <a href="http://www.zingchart.com/store/buy" target="_blank">licensed developers</a> get full support. (Sorry we gotta eat too) Here are a few ways to notify us of bugs:</p>
+			
+			<p><b>Submit Bug Report Tool</b><br>
+			Right-click and select Submit Bug Report on any chart (must be hosted online). Add in a quick comment and your email to be notified when the issue has been resolved.</p>
+						
+			<p><b>Submit a Request Online</b><br>
+			You may submit a bug or feature request using our <a href="http://www.zingchart.com/support/" target="_blank">standard support form</a> on the ZingChart website.</p>
+			
+			<p><b>Email Us</b><br/>
+			You may submit a bug or feature request by emailing us at <a href="mailto:support@zingchart.com">support@zingchart.com</a>.</p>
+			
+			<p><b>Tweet Us</b><br/>
+			While we'd love you to show us love on twitter, you can also request help or share ideas by mentioning @ZingChart or including the #zingchart hashtag in your tweets. Regardless, <a href="http://www.twitter.com/zingchart" target="_blank">follow us</a> for cool updates, charts, and other nonsense.</p><br>			
+						
+		<h2>ZingChart Licensing Options</h2>
+					<p><b>Free Trial:</b><br> Branded, unlimited use trial version. Free to all users for use on any number of domains so long as the ZingChart logo and link remain unaltered.
+					<br><br>
+					<b>Developer License:</b><br> Individual license for a single named developer to test, create and deploy charts in a development environment or to publish on non-commercial domains such as blogs or personal websites.  
+					<br><br>
+					<b>Single Domain Commercial License:</b><br> For deployment of any number of charts on a single domain.
+					<br/><br/>
+					<b>Multi-Domain Commercial License:</b><br> For deployment of charts on up to 10 separate domains.
+					<br/><br/>
+					<b>Enterprise Commercial License:</b><br> For deployment of charts on unlimited domains by a single organization. Fees for Enterprise Licenses will be customizable per Licensee. 
+					<br><br>
+					<b>Software as a Service ("SaaS") License:</b><br> For deployment of charts on Web applications that are sold, resold, or licensed to other users outside of the licensee's organization.
+					<br><br>
+					<b>OEM License:</b><br> For permission to sell branded or unbranded ZingChart software to third parties as related to or part of an existing product.
+					<br><br>
+					Visit the <a href="http://www.zingchart.com/store/buy.php" target="_blank">ZingChart Store</a> for the most up-to-date pricing.
+					</p>
+					
+		<h2>Contact</h2>
+					<p><a href="mailto:support@zingchart.com">support@zingchart.com</a>
+					<br/>
+					<a href="http://www.zingchart.com/support" target="_blank">http://www.zingchart.com/support</a></p>
+		
+		<hr>
+            <p>ZingChart &copy; 2010 PINT, Inc.
+			<br>ZingChart <a href="http://www.zingchart.com/legal/tc.php" target="_blank">Terms and Conditions</a> and <a href="http://www.zingchart.com/privacy/" target="_blank">Privacy Policy</a>.<br>
+		  	<i>QuickStart revision 1.11  Last updated: February 2010</i>			
+</div></div></div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+{
+	"theme" : "none",
+	"graphset" : [
+		{
+			"type" : "hbar",
+			"title" : {
+				"text" : "Ad Spending By Media Type: 2009 vs. 2008",
+				"font-size" : 19
+			},
+			"plotarea" : {
+			},
+			"scale-x" : {
+				"mirrored" : true,
+				"values" : [
+					"TV Overall",
+					"Network TV",
+					"Cable TV",
+					"Spanish TV",
+					"Magazines Overall",
+					"Consumer Magazines",
+					"B2B Magazines",
+					"Local Magazines",
+					"Newspaper Overall",
+					"Local Newspapers",
+					"National Newspapers",
+					"Spanish Newspapers",
+					"Radio Overall",
+					"Local Radio",
+					"National Spot Radio",
+					"Network Radio",
+					"Outdoor",
+					"Internet (Display only)"
+				],
+				"labels" : [
+					"<span style='font-weight:bold'>TV Overall</span>",
+					"Network TV",
+					"Cable TV",
+					"Spanish TV",
+					"<span style='font-weight:bold'>Magazines Overall</span>",
+					"Consumer Magazines",
+					"B2B Magazines",
+					"Local Magazines",
+					"<span style='font-weight:bold'>Newspaper Overall</span>",
+					"Local Newspapers",
+					"National Newspapers",
+					"Spanish Newspapers",
+					"<span style='font-weight:bold'>Radio Overall</span>",
+					"Local Radio",
+					"National Spot Radio",
+					"Network Radio",
+					"<span style='font-weight:bold'>Outdoor</span>",
+					"<span style='font-weight:bold'>Internet (Display only)</span>"
+				],
+				"svg-labels" : [
+					"TV Overall",
+					"Network TV",
+					"Cable TV",
+					"Spanish TV",
+					"Magazines Overall",
+					"Consumer Magazines",
+					"B2B Magazines",
+					"Local Magazines",
+					"Newspaper Overall",
+					"Local Newspapers",
+					"National Newspapers",
+					"Spanish Newspapers",
+					"Radio Overall",
+					"Local Radio",
+					"National Spot Radio",
+					"Network Radio",
+					"Outdoor",
+					"Internet (Display only)"
+				],
+				"tick" : {
+					"placement" : "cross"
+				},
+				"guide" : {
+					"visible" : false
+				},
+				"item" : {
+					"placement" : "ref-auto",
+					"padding" : 5,
+					"font-size" : 10
+				},
+				"tick" : {
+					"visible" : false
+				},
+				"line-width" : 0,
+				"line-color" : "#f00"
+			},
+			"scale-y-2" : {
+				"values" : "-30:10:5",
+				"guide" : {
+					"alpha" : 0.25
+				},
+				"line-color" : "#ccc",
+				"tick" : {
+					"line-color" : "#ccc"
+				},
+				"format" : "%v%"
+			},
+			"plot" : {
+				"shadow" : false,
+				"background-color" : "#8EB4E3",
+				"bars-space-left" : "25%",
+				"bars-space-right" : "25%",
+				"hover-marker" : {
+					"background-color" : "#7CA3E3"
+				},
+				"animate" : 1,
+				"effect" : 1
+			},
+			"tooltip" : {
+				"background-color" : "#FFFFFF",
+				"padding" : 5,
+				"border-width" : 1,
+				"border-color" : "#7CA3E3",
+				"color" : "#000",
+				"border-radius" : 10
+			},
+			"series" : [
+				{
+					"scales" : "scale-x,scale-y-2",
+					"values" : [
+						-9.2, -7.4, 0, -24,
+						-9, -17, -16.3, -26.5,
+						-11, -27.6, -22, -19.2,
+						-20.2, -20.8, -24.5, -8.3,
+						-13.3, 7.2
+					],
+					"tooltip" : {
+						"text" : "%kv<br />No change",
+						"color" : "#00c",
+						"rules" : [
+							{
+								"rule" : "%v < 0",
+								"color" : "#c00",
+								"text" : "%kv<br />Decreased by <b>%v%</b>",
+								"svg-text" : "%kv<br />Decreased by %v%"
+							}
+							,
+							{
+								"rule" : "%v > 0",
+								"color" : "#0c0",
+								"text" : "%kv<br />Increased by <b>%v%</b>",
+								"svg-text" : "%kv<br />Increased by %v%"
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}

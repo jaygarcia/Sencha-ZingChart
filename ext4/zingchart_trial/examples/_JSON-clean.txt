@@ -1,0 +1,31 @@
+{
+    "type" : "hbar",
+	
+	"plotarea":{
+	},
+	
+	"title":{
+	},
+	
+	"legend":{
+	},
+	
+    "scale-x":{
+    },
+	
+    "scale-y":{
+    },
+	
+	"labels":[
+	],
+	
+	"tooltip":{
+	},
+	
+	"plot": {
+	},
+	
+	"series":[
+    ]
+
+  }

@@ -1,0 +1,76 @@
+{
+    "type":"pie3d",
+    "background-color":"#FFFFF4 #C0E1FB",
+    "fill-type":"radial",
+    "plotarea":{
+        "height":"320px",
+        "width":"320px",
+        "x":"80px",
+        "y":"1px"
+    },
+    "title":{
+        "text":"2010 Marketing Budget Allocation",
+        "alpha":0.6,
+        "background-color":"#ffffff",
+        "border-radius":"15px",
+        "font-color":"#2B4975",
+        "font-size":"18px",
+        "margin-left":"45px",
+        "margin-top":"20px",
+        "text-align":"center",
+        "width":"400px"
+    },
+    "legend":{
+        "alpha":"0.4",
+        "background-color":"#ffffff",
+        "border-radius":"15px",
+        "border-width":0,
+        "layout":2,
+        "position":"37 295",
+        "width":"400px",
+        "item":{
+            "marker-style":"circle",
+            "border-width":0,
+            "offset-x":100,
+            "margin-left":10,
+            "text-align":"left",
+            "margin-right":10
+        }
+    },
+    "plot":{
+        "border-width":0,
+        "detach":1,
+        "highlight":true,
+        "offset":0,
+        "tilt":"2",
+        "thickness":40,
+        "tooltip-text":"%t : $%v,000"
+    },
+    "series":[
+		{
+			"values":[15],
+			"text":"Print Ad Media Buy"
+		},
+		{
+			"values":[10],
+			"text":"Pay Per Click Ads",
+			"offset":40
+		},
+		{
+			"values":[80],
+			"text":"TV Media Buy"
+		},
+		{
+			"values":[55],
+			"text":"Creative Development"
+		},
+		{
+			"values":[29],
+			"text":"Website Development"
+		},
+		{
+			"values":[46],
+			"text":"Trade Shows"
+		}
+    ]
+}

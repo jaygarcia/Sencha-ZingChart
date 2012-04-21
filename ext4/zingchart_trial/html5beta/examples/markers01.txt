@@ -1,0 +1,69 @@
+
+{
+	"graphset" : [
+		{
+			"type" : "line",
+			"scale-x" : {
+				"max-items" : 99
+			},
+			"scale-y" : {
+				"min-value" : 0,
+				"max-value" : 1000,
+				"markers" : [
+					{
+						"type" : "area",
+						"range" : [0, 200],
+						"background-color" : "#f00",
+						"label" : {
+							"text" : "Low",
+							"background-color" : "#f00"
+						}
+					}
+					,
+					{
+						"type" : "area",
+						"range" : [200, 700],
+						"background-color" : "#ff0",
+						"label" : {
+							"text" : "Average",
+							"background-color" : "#ff0"
+						}
+					}
+					,
+					{
+						"type" : "area",
+						"range" : [700, 1000],
+						"background-color" : "#0f0",
+						"label" : {
+							"text" : "High",
+							"background-color" : "#0f0"
+						}
+					}
+					,
+					{
+						"type" : "line",
+						"range" : [700],
+						"line-color" : "#090",
+						"line-width" : 2,
+						"line-style" : "dotted"
+					}
+					,
+					{
+						"type" : "line",
+						"range" : [200],
+						"line-color" : "#900",
+						"line-width" : 2,
+						"line-style" : "dashed"
+					}
+				]
+			},
+			"series" : [
+				{
+					"values" : [811.5,857,875.6,837.3,845.4,790.5,727.6,676.8,735.7,728.9,668.5,655.3,619.2,594.6,633.8,598.8,580.1,607.5,646.5,631.1,650.3,584.9,537,473,528.8,501.7,503.3,563.4,562.5,630.3,691.1]
+				}
+			]
+		}
+	]
+}
+
+

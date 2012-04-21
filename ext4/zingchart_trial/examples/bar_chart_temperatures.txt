@@ -1,0 +1,117 @@
+{
+	"type":"bar",
+	"background-image": "images/base_with_y_axis.png",
+	"plotarea":{
+		"background-color":"-1",
+		"border-width": 0,
+		"fill-type": "linear",
+		"margin":"107 20 72 58"
+	},
+	"title":{
+		"text":"AVERAGE HIGH &amp; LOW TEMPERATURES IN PHOENIX, ARIZONA",
+		"background-color":"-1",
+		"text-align": "left",
+		"font-color": "#fff",
+		"font-family": "calibri",
+		"font-size": 14,
+		"font-weight":"bold",
+		"margin": "20 22 0 88"
+	},
+	"scale-x":{
+		"font-color":"#fff",
+		"line-color":"-1",
+		"line-width": 0,
+		"guide":{
+			"line-color":"-1",
+			"line-width": 0
+		},
+		"item":{
+			"font-color":"#fff",
+			"font-family":"calibri",
+			"font-size":"14px",
+			"offset-y":"6px"
+		},
+		"tick": {
+			"visible": false
+		},
+		"values":["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
+	},
+	"scale-y":{
+		"visible": false
+	},
+	"labels":[
+		{
+			"text": "data source: http://phoenix.about.com/od/weather/a/averagetemps.htm",
+			"url": "http://phoenix.about.com/od/weather/a/averagetemps.htm",
+			"target": "_blank",
+			"font-color":"#666",
+			"font-size":"9px",
+			"x":"5px",
+			"y":"383px"
+		},
+		{
+			"text": " ",
+			"alpha":"0.6",
+			"background-color": "#fff #555",
+			"border-radius":"15px",
+			"font-color": "#fff",
+			"height":"37px",
+			"width":"92px",
+			"x":"405px",
+			"y":"360px"
+		}
+	],			
+	"tooltip":{
+		"bevel":false,
+		"background-repeat": false,
+		"background-transparent": true,
+		"font-color": "#000",
+		"font-weight":"bold",
+		"margin": "30 30",
+		"shadow":false,
+		"rules" : [
+			{
+				"rule" : "%v < 50",
+				"background-image" : "images/tooltip_cloud.png"
+			},
+			{
+				"rule" :"%v >= 50 && %v < 70",
+				"background-image" : "images/tooltip_sun.png"
+			},
+			{
+				"rule" :"%v >= 70 && %v < 95",
+				"background-image" : "images/tooltip_fireball.png"
+			},	
+			{
+				"rule" : "%v >= 95",
+				"background-image" : "images/tooltip_devil.png"
+			}
+		]
+	},	
+	"plot":{
+		"alpha":0.8,
+		"animate":1,
+		"aspect":"brightness",
+		"effect":1,
+		"margin-left":"5px",
+		"tooltip-text":" %v&deg;"
+	},
+	"series":[
+		{
+			"alpha": 1,
+			"background-color" : "#fd2200 #fdc002",
+			"border-color": "#000",
+			"border-width": 0,
+			"text":"average high temperature",
+			"values":[66,70,75,84,93,103,105,103,99,88,75,66]
+		},
+		{
+			"alpha": 1,
+			"background-color" : "#09a8f7 #a8d258",
+			"border-color": "#000",
+			"border-width": 0,
+			"text":"average low temperature",
+			"values":[41,44,49,55,64,72,80,79,72,61,48,42]
+		}		
+	]
+}

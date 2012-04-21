@@ -1,0 +1,57 @@
+
+{
+	"graphset" : [
+		{
+			"type" : "nestedpie",
+			"title" : {
+				"text" : "Nested Pie Chart"
+			},
+			"plotarea" : {
+			},
+			"scale" : {
+				"size-factor" : 0.9
+			},
+			"tooltip" : {
+				"padding" : "6",
+				"border-radius" : "6"
+			},
+			"plot" : {
+				"ref-angle" : 0,
+				"slice" : 10
+			},
+			"series" : [
+				{
+					"text" : "Apple",
+					"values" : [717.9,729.2],
+					"hover-state" : {
+						"background-color" : "#f00 #0f0"
+					}
+				}
+				,
+				{
+					"text" : "Pear",
+					"values" : [607.6,604.7]
+				}
+				,
+				{
+					"text" : "Cherry",
+					"values" : [711.7,724.7]
+				}
+				,
+				{
+					"text" : "Mango",
+					"values" : [585.7,612]
+				}
+				,
+				{
+					"text" : "Papaya",
+					"values" : [500.3,524.1]
+				}
+			]
+		}
+	]
+}
+
+
+
+

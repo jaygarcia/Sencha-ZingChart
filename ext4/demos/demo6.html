@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>HTML5 Line Chart Demo</title>
+		<link rel="stylesheet" type="text/css" href="../extjs-4.1.0-rc3/resources/css/ext-all.css">
+
+		<script type="text/javascript" src="../extjs-4.1.0-rc3/ext-debug.js"></script>
+		<!-- ZingChart -->
+		<script type="text/javascript" src="../zingchart_trial/html5beta/js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="../zingchart_trial/zingchart-lite-1.1.min.js"></script>
+		<script type="text/javascript" src="../zingchart_trial/html5beta/js/zingchart-html5beta-min.js"></script>
+		<!-- Demo -->
+		<script type="text/javascript">
+            zingchart.liburl = '../zingchart_trial/zingchart.swf';
+
+            Ext.Loader.setConfig({
+                enabled : true,
+                paths   : {
+                    'Ext.ux.zingchart' : '../ux/zingchart/'
+                }
+            });
+
+            Ext.require([
+                'Ext.ux.zingchart.Panel'
+            ]);
+
+            Ext.onReady(function() {
+
+                Ext.create('Ext.ux.zingchart.Window', {
+                    title    : 'Line Chart',
+                    width    : 640,
+                    height   : 400,
+//                    renderTo : 'panel',
+                    chartData     : {
+                        graphset : [
+                            {
+                                type      : "line",
+                                "scale-x" : {
+                                    "min-value" : 0,
+                                    "max-value" : 11,
+
+                                    "labels" : [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ]
+                                },
+                                series    : [
+                                    {
+                                        values : [ 1, 11, 28, 42, 26, 13, 32, 15, 12, 17, 4, 19 ],
+                                        text   : "Apples"
+                                    },
+                                    {
+                                        values : [ 2, 12, 22, 50, 21, 17, 39, 10, 11, 10, 8, 20 ],
+                                        text   : "Oranges"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }).show();
+            });
+
+
+		</script>
+	</head>
+	<body style="background: white;">
+		<div style="padding: 5px; margin-bottom: 5px;">
+			<h1>HTML5 Demo</h1>
+			<p style="padding: 5px;">This demo shows a ExtX.ZingChart.Panel rendered to a fixed div and as a fixed size.</p>
+		</div>
+		<div style="padding-left: 10px;">
+			<div id="panel"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+{
+"graphset" : [
+    {
+        "type" : "hbullet",
+        "chart" : {
+            "margin" : "50 20 40 50"
+        },
+        "legend" : {
+            "layout" : "1x",
+            "width" : "100%",
+            "shadow" : false,
+            "margin" : 5,
+            "border-width": 1
+        },
+        "tooltip" : {
+            "border-radius" : 10,
+            "margin" : 5,
+            "padding" : 5
+        },
+        "scale-y" : {
+            "values" : "0:100:10"
+        },
+        "scale-x" : {
+            "values" : ["Jan","Feb","Mar","Apr","May","Jun"]
+        },
+        "plot":{
+            "goal" : {
+                "width" : 5
+            },
+            "animate" : true,
+            "effect" : 2,
+            "speed" : 1,
+            "tooltip-text" : "%v Completed<br> <br>%g Estimated"
+        },
+        "series":[
+            {
+                "values" : [69,71,67,87,85,67],
+                "goals" : [85,77,87,53,70,60],
+                "text" : "Profits"
+            },
+            {
+                "values" : [90,55,64,65,87,90],
+                "goals" : [53,61,53,75,80,76],
+                "text" : "Aquisitions"
+            },
+            {
+                "values" : [61,70,88,62,85,67],
+                "goals" : [81,64,79,86,84,78],
+                "text" : "Contracts"
+            }
+        ]
+    }]
+}

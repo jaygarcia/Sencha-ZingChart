@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<title>ZingChart: Piano Chart Demo</title>
+<script type="text/javascript" src="../zingchart-1.1.min.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		zingchart.render({
+			dataurl 		: "piano_chart_brightness.txt",
+			container 		: "zingchart",
+			width			: 500,
+			height			: 400,
+			liburl			: "../zingchart.swf",
+			flashvars		: {
+				               allowlocal : 0,
+				               exportdataurl : "../exportdata.php",
+				               exportimageurl : "../exportimage.php"
+			                  }
+		});
+	}
+</script>
+</head>
+<body>
+
+<div id="zingchart"></div>
+
+</body>
+</html>

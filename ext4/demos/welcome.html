@@ -1,0 +1,316 @@
+<html>
+	<head>
+		<title>ZingChart Demos</title>
+		<style type="text/css">
+body {
+	background: white;
+}
+p {
+	margin-bottom: 8px;
+}
+pre {
+	font-size: 11px;
+	border: 1px solid black;
+	padding: 5px;
+    margin-bottom: 0;
+}
+h3 {
+	padding-left: 25px;
+}
+.caption {
+    font-size: 11px;
+    font-style: italic;
+}
+		</style>
+	</head>
+	<body>
+		<h1>Welcome to the ZingChart ExtJS Demos.</h1>
+
+		<p>This ExtJS application demonstrates how trivial it is to integrate ZingCharts with ExtJS, using the Ext.ZingChart.js
+		extension included in the ZingChart distribution.</p>
+
+		<p>There are identical demos for using the ZingChart Flash component as well as the ZingChart HTML5 component.</p>
+
+		<p>Choose a demo to view from the TreePanel on the left.  You may view the demo running in this IFRAME, view the HTML
+		source of the demo, and view the JavaScript source of the demo.</p>
+		
+        <h1>Getting started with the ExtJS extension for ZingChart.<h1>
+        
+        <h2>Introduction</h2>
+        
+        <p>In this post we'll introduce the ExtX.ZingChart - ExtJS (and Sencha Touch) extension, wrapping the ZingChart graphs.</p>
+        
+        <p>There are 3 main classes: ExtX.ZingChart.Container, ExtX.ZingChart.Panel and ExtX.ZingChart.Window.
+        All of them are subclasses of according ExtJS classes with the same interface. </p>
+        
+        <p>You can use any of these classes, picking up the most convenient one for the current task 
+        (Window for charts in popup, Panel for charts with toolbars and Container for simple chart box).</p>
+        
+        <h2>1. Line Chart Demo</h2>
+        
+        <p>The code for this example is available in the "/extjs-demo" folder of the package.</p>
+
+        <p>The first demo renders an ExtX.ZingChartPanel to a fixed div in the HTML document, and with a fixed width and height.
+        The demo consists of two files, demo1.html and demo1.js.</p>
+    
+        <pre>
+&lt;html>
+    &lt;head>
+        &lt;title>Line Chart Demo&lt;/title>
+        &lt;link rel="stylesheet" type="text/css" href="../extjs-4.1.0-rc3/resources/css/ext-all.css">
+        &lt;script type="text/javascript" src="../extjs-4.1.0-rc3/adapter/ext/ext-base-debug.js">&lt;/script>
+        &lt;script type="text/javascript" src="../extjs-4.1.0-rc3/ext-debug.js">&lt;/script>
+        &lt;!-- ZingChart -->
+        &lt;script type="text/javascript" src="../zingchart_trial/zingchart-lite-1.1.min.js">&lt;/script>
+        &lt;script type="text/javascript" src="../ExtX.ZingChart.js">&lt;/script>
+        &lt;!-- Demo -->
+        &lt;script type="text/javascript" src="demo1.js">&lt;/script>
+    &lt;/head>
+    &lt;body style="background: white;">
+        &lt;div style="padding: 5px; margin-bottom: 20px;">
+            &lt;h1>Flash Demo&lt;/h1>
+            &lt;p style="padding: 5px;">This demo shows a ExtX.ZingChart.Panel rendered to a fixed div
+            and as a fixed size.&lt;/p>
+        &lt;/div>
+        &lt;div style="padding: 50px;">
+            &lt;div id="panel">&lt;/div>
+        &lt;/div>
+    &lt;/body>
+&lt;/html>
+        </pre>
+        <div class="caption">Figure 1: extjs-demo/demo1.html</div>
+        
+        <p>We've included the ExtJS itself, then the ZingChart API (note that you may use zingchart-lite, as ExtJS already includes the SWFObject library),
+        and the ExtJS wrapper.  Notice the DIV with id of "panel" - this is where in the DOM that the ExtX.ZingChart.Panel is rendered.</p>
+        
+        <pre>
+Ext.onReady(function() {
+    zingchart.liburl = '../zingchart_trial/zingchart.swf';
+    new ExtX.ZingChart.Panel({
+        title: 'Line Chart',
+        width: 640,
+        height: 400,
+        renderTo: 'panel',
+        data: {
+            graphset: [
+                {
+                    type: "line",
+                    "scale-x": {
+                        "min-value": 0,
+                        "max-value": 11,
+                        "labels": [
+                            "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                        ]
+                    },
+                    series: [
+                        {
+                            values: [ 1, 11, 28, 42, 26, 13, 32, 15, 12, 17, 4, 19 ],
+                            text: "Apples"
+                        }
+                    ]
+                }
+            ]
+        }
+    });
+});
+        </pre>
+        <div class="caption">Figure 2: extjs-demo/demo1.js</div>
+        
+        <p>As always, the code should be wrapped with Ext.onReady call, which waits for the DOM to be loaded. The first thing we do - specify the location of the 
+        "zingchart.swf" file using the "zingchart.liburl" configuration option.</p>
+        
+        <p>Then, we instantiate the ExtX.ZingChart.Panel. This class is a subclass of the Ext.Panel, so you can use any config options of the panel, like the "tbar".
+        The JSON packet, describing the chart should be supplied in the "data" config option. You can see this demo in action by opening the "Line Chart"
+        part of the tree to the left, under Flash Demos and click on "View Demo."</p>
+         
+        <p>Please refer to the ZingChart documentation for the details on how you can customize the graph, right now we'll focus on the integration workflow.</p>
+
+        <h2>2. Integration with Ext.data.Store</h2>
+        
+        <p>Now that we can create simple graphs, lets take a look how we can supply the data for them from the instance of Ext.data.Store. </p>
+        
+        <h3>2.1 Simplest case</h3>
+        
+        <p>In the simplest case, ZingChart will extract the 'value' field of store's records:</p>
+        
+        <pre>
+var applesStore = new Ext.data.ArrayStore({
+    fields: [
+        { name: 'value' }
+    ],
+    data: [
+        [ 1 ], [ 11 ], [ 28 ], [ 42 ], [ 26 ], [ 13 ], [ 32 ], [ 15 ], [ 12 ], [ 17 ], [ 4 ], [ 19 ]
+    ]
+});
+        </pre>
+    
+        <p>To do that, instead of 'values' key of the 'series' object in graph description:  </p>
+    
+        <pre>
+series: [
+    {
+        text: "Apples",
+        values: [ 1, 11, 28, 42, 26, 13, 32, 15, 12, 17, 4, 19 ],
+    }
+]
+        </pre>
+
+        <p>simply provide the store instance:</p>
+
+        <pre>
+series: [
+    {
+        text: "Apples",
+        store: applesStore
+    }
+]
+        </pre>
+    
+        <p>There are some additional options. For example, if the value for graph is stored in the field with the name other than "value", you can specify it with 'yField' option:</p>
+    
+        <pre>
+// store
+var applesStore = new Ext.data.ArrayStore({
+    fields: [
+        { name: 'salesVolume' }
+    ],
+    ...
+});
+
+// graph descrpition
+series : [
+    {
+        text: "Apples",
+        store: applesStore,
+        yField: 'salesVolume'
+    }
+]
+        </pre>
+    
+        <h3>2.2 Specifying the values for X axis</h3>
+        
+        <p>If you want to specify the x-coordinates for the graph points, and those x-coords are stored in the other field of the data store:</p>
+        
+        <pre>
+var applesStore = new Ext.data.ArrayStore({
+    fields: [
+        { name: 'month' },
+        { name: 'salesVolume' }
+    ],
+    data : [
+        [0,1], [1,11], [3,28], [5,42], [7,26], [9,13], [10,32], [11,12]
+    ]
+});
+        </pre>
+    
+        <p>then provide the 'xField' option when passing the store to chart:</p>
+    
+        <pre>
+series : [
+    {
+        text: "Apples",
+        store: applesStore,
+        xField: 'month',
+        yField: 'salesVolume'
+    }
+]
+        </pre>
+    
+        <p>Note, that you can omit some x-values this way.</p>
+    
+    
+        <h3>2.3 Extracting data from record</h3>
+    
+        <p>In general case, to extract data from the store's record, you can provide the 'converter' function. For example the previous
+        example can be rewritten as: </p>
+    
+        <pre>
+series : [
+    {
+        text: "Apples",
+        store: applesStore,
+        converter: function (record, index) {
+            return [ record.get('month'), record.get('value') ];
+        }
+    }
+]
+        </pre>
+        
+        <p>The 'converter' will be called for each record in store, and receive the record and it's index as the arguments.</p>
+        
+        <p>Anything returned from the 'converter', will be 'push'ed to the 'values' of the series.</p>
+        
+        <p>The same store can be supplied for different chart series, using different 'x/yField' options or 'converter's.</p>
+        
+        <p>See "Grid and Store" demo for the complete integration example. </p>
+        
+        <h2>3. Handling chart events</h2>
+        
+        <p>All ExtX.ZingChart.* classes fires a number of chart events, like 'plot_mouseout', 'plot_mouseover' etc. Please see the
+        <a target="_new" href="http://www.zingchart.com/learn/api/events.php">ZingCharts Events API Documentation</a> for a complete list of events.
+        
+        <p>These are usual ExtJS events with the interface you are probably already used to: </p>
+        
+        <pre>
+var panel   = new ExtX.ZingChart.Panel({
+    ...
+    listeners: {
+        plot_mouseover: function (chart, params) { ... }
+    }
+});
+
+panel.on('plot_mouseout', function (chart, params) { ... }, panel, { defer: 100, single: true });
+        </pre>
+        
+        <p>The first argument to each event handler is the chart which fired it. The second - a JSON object with event parameters.</p>
+        
+        <p>The functional example of handling chart events is available in "/demo/04_chart_hover.html".</p>
+        
+        <h2>4. Chart methods</h2>
+        
+        <p>All ExtX.ZingChart.* classes provides a number of additional methods for chart manipulation as well. Full list of such methods 
+        is available here <a target="_new" href="http://www.zingchart.com/learn/api/api.php">http://www.zingchart.com/learn/api/api.php</a></p>
+        
+        <p>The usage of the chart methods is a bit different from the "raw" JavaScript API described on the previous link. There is no need to provide
+        the 'containerID' and manually stringify the parameters - just call the needed method with the JSON object, as usual:</p>
+        
+        <pre>
+var panel   = new ExtX.ZingChart.Panel({ ... });
+
+panel.addnode({ value: 10 });
+        </pre>
+    
+        <p>Important note: all of chart methods are available only after initial load of the chart, which will be indicated by the 'load' event. So the previous
+        example should be written as:</p>
+    
+        <pre>
+var panel   = new ExtX.ZingChart.Panel({ ... });
+
+// wait for 'load' event
+panel.on('load', function () {
+
+    // now can use chart methods
+    panel.addnode({ value: 10 });
+    
+    var count = panel.getnodelength({ plotindex: 1 });
+    
+    // etc
+});
+        </pre>
+    
+        <p>Various examples of using chart methods are available in "/demo/02_grid_and_store.html" and "03_form_and_chart.html".</p>
+        
+        <h2>5. Wrapping up</h2>
+        
+        <p>Hopefully this introduction will allow you to get started with the ZingChart ExtJS components for advanced charting.</p>
+        
+        <p>If you've spotted a bug, please submit a bug report, as described here: http://www.zingchart.com/support/</p>
+        
+        <p>Some other useful links:</p>
+        
+        ZingChart Docs  - <a target="_new" href="http://www.zingchart.com/learn/docs.php">http://www.zingchart.com/learn/docs.php</a><br/>
+        Methods list    - <a target="_new" href="http://www.zingchart.com/learn/api/api.php">http://www.zingchart.com/learn/api/api.php</a><br/>
+        Events list     - <a target="_new" href="http://www.zingchart.com/learn/api/events.php">http://www.zingchart.com/learn/api/events.php</a><br/>
+
+	</body>
+</html>

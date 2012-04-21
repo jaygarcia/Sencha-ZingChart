@@ -1,0 +1,109 @@
+{
+    "type":"gauge",
+    "background-color":"#333 #666",
+    "border-color":"#333",
+    "border-width":"10px",
+    "fill-type":"radial",
+    "plotarea":{
+        "margin":"50 70 30 20"
+    },
+    "title":{
+        "text":"March Sales to Date",
+        "background-color":"#333",
+        "font-family":"helvetica",
+        "width":"200px"
+    },
+    "scale":{
+        "margin":"10 20 10 20",
+        "item":{
+            "background-color":"-1",
+            "border-color":"-1",
+            "font-color":"#FFFFFF",
+            "font-family":"helvetica",
+            "font-size":14,
+            "font-weight":"bold",
+            "offset-x":"25px",
+            "offset-y":"-10px",
+            "text-align":"center"
+        },
+        "values":[
+			"Robert",
+			"Jennifer",
+			"Jeremy",
+			"Marybeth"
+        ]
+    },
+    "scale-r":{
+        "aperture":270,
+        "background-color":"#ffffff #999999",
+        "border-color":"#fff",
+        "border-width":"3px",
+        "ref-angle":270,
+        "center":{
+            "background-color":"0xffffff,0x333333",
+            "border-color":"#fff",
+            "border-width":"1px",
+            "fill-type":"radial",
+            "fill-offset-x":"-2px",
+            "fill-offset-y":"-2px",
+            "size":"10px"
+        },
+        "guide":{
+            "alpha":0.8,
+            "background-color":"0xffffff,0xffffff",
+            "offset-r":-10,
+			"rules":[
+				{
+					"rule":"%v <= 60",
+					"background-color":"0xff0000,0xff0000"
+				},
+				{
+					"rule":"%v > 60 && %v <= 120",
+					"background-color":"0xffff00,0xffff00"
+				},
+				{
+					"rule":"%v >=120",
+					"background-color":"0x00ff00,0x00ff00"
+				}
+            ]
+        },
+        "item":{
+            "text-align":"center",
+            "font-color":"#ffffff",
+            "font-family":"helvetica",
+            "font-size":"12px",
+            "font-weight":"bold",
+            "offset-r":"10px"
+        },
+        "ring":{
+            "alpha":0.8,
+            "background-color":"0xeeeeee,0xbbbbbb",
+            "offset-r":0,
+            "size":10
+        },
+        "tick":{
+            "line-color":"0x0000ff",
+            "line-width":"2px",
+            "size":"4px"
+        },
+        "values":"0:180:20"
+    },
+    "plot":{
+        "background-color":"#0033cc",
+        "border-color":"#0033cc",
+        "border-width":1,
+        "csize":"15",
+        "fill-type":"radial"
+    },
+    "series":[
+		{
+			"text":"Sales",
+			"values":[
+				88,
+				120,
+				142,
+				167
+			]
+		}
+    ]
+}
