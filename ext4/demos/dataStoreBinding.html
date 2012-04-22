@@ -1,0 +1,148 @@
+<html>
+<head>
+    <title>Grid and Store Demo</title>
+    <link rel="stylesheet" type="text/css" href="../extjs-4.1.0-rc3/resources/css/ext-all.css">
+
+    <script type="text/javascript" src="../extjs-4.1.0-rc3/ext-debug.js"></script>
+    <!-- ZingChart -->
+    <script type="text/javascript" src="../zingchart_trial/html5beta/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../zingchart_trial/zingchart-lite-1.1.min.js"></script>
+    <script type="text/javascript" src="../zingchart_trial/html5beta/js/zingchart-html5beta-min.js"></script>
+    <!-- Demo -->
+    <script type="text/javascript">
+        zingchart.liburl = "../zingchart_trial/zingchart.swf";
+
+        Ext.Loader.setConfig({
+            enabled : true,
+            paths   : {
+                'Ext.ux.zingchart' : '../ux/zingchart/'
+            }
+        });
+
+        Ext.require([
+            'Ext.ux.zingchart.Panel'
+        ]);
+
+        Ext.onReady(function() {
+
+            Ext.define('AppleModel', {
+                extend : 'Ext.data.Model',
+                fields : [
+                    'monthName',
+                    'monthNum',
+                    'salesVolume'
+                ]
+            });
+
+            var applesStore = Ext.create('Ext.data.Store', {
+                model : 'AppleModel',
+                proxy : {
+                    type   : 'memory',
+                    reader : {
+                        type : 'array'
+                    }
+                }
+            });
+
+            var data = [
+                ['Jan', 0, 1],
+                ['Feb', 1, 11],
+                ['Mar', 2, 21],
+                ['Apr', 3, 28],
+                ['May', 4, 18],
+                ['Jun', 5, 42],
+                ['Jul', 6, 32],
+                ['Aug', 7, 26],
+                ['Sep', 8, 16],
+                ['Oct', 9, 13],
+                ['Nov', 10, 32],
+                ['Dec', 11, 12]
+            ];
+
+            var chartPanel = Ext.create('Ext.ux.zingchart.Panel', {
+                renderTo    : Ext.get('panel'),
+                flex        : 1,
+                title       : 'Chart',
+                store       : applesStore,
+                chartConfig : {
+                    type       : 'line',
+                    labelField : 'monthName',
+                    series     : [
+                        {
+                            text    : 'Apples',
+                            animate : true,
+                            effect  : 1,
+//                            xField  : 'monthNum',
+                            dataIndex  : 'salesVolume'
+                        }
+                    ]
+                }
+            });
+
+            var grid = Ext.create('Ext.grid.Panel', {
+                title        : 'Data (click on value to edit)',
+                store        : applesStore,
+                clicksToEdit : 1,
+                width        : 200,
+                plugins      : [
+                    {
+                        ptype        : 'cellediting',
+                        clicksToEdit : 1
+                    }
+                ],
+                columns      : [
+                    {
+                        header    : 'Month',
+                        dataIndex : 'monthNum', // for sorting!
+                        flex      : 1,
+                        renderer  : function(value, metaData, record, rowIndex, colIndex, store) {
+                            return record.data.monthName
+                        }
+                    },
+                    {
+                        header    : 'Sales volume',
+                        dataIndex : 'salesVolume',
+                        flex      : 1,
+                        editor    : {
+                            xtype : 'numberfield'
+                        }
+                    }
+                ],
+                listeners    : {
+                    edit : function(editor, event) {
+                        event.record.commit()
+                    }
+                }
+            });
+
+            applesStore.loadRawData(data);
+
+            Ext.create('Ext.Container', {
+                renderTo : Ext.get('panel'),
+                height   : 300,
+                width    : 700,
+                layout   : {
+                    type  : 'hbox',
+                    align : 'stretch'
+                },
+                items    : [
+                    grid,
+                    chartPanel
+                ]
+            })
+        })
+    </script>
+</head>
+<body style="background: white;">
+<div style="padding: 5px;">
+    <h1>HTML5 Demo</h1>
+
+    <div style="padding: 5px; margin-bottom: 10px">This demonstrates using an Ext.data.Store for a chart's data series.
+        The grid is editable - click on
+        a sales volume to change the value and the chart will change in real time.
+    </div>
+    <div style="padding: 5px;">The ExtX.ZingChart.Panel and Grid are rendered to a div element in the HTML.</div>
+    <div id="panel" style="margin-left: 50px;"></div>
+</div>
+</body>
+</html>

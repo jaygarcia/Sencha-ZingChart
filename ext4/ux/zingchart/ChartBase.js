@@ -62,7 +62,18 @@ Ext.define('Ext.ux.zingchart.ChartBase', {
         var me = this;
         me.output = me.output || Ext.ux.zingchart.output;
 
-        //TODO: Move to prototype
+        if (me.store) {
+            if (me.store.data.items.length > 0) {
+                me.onStoreLoadSetChartData();
+            }
+
+            me.store.on({
+                scope  : me,
+                load   : me.onStoreLoadSetChartData,
+                update : me.onStoreUpdate
+            });
+        }
+
         // added by mschwartz to handle resize event
         me.on({
             scope       : me,
@@ -74,20 +85,18 @@ Ext.define('Ext.ux.zingchart.ChartBase', {
                 fn     : me.onFirstLayout
             }
         });
+
     },
 
     onResizeSetChartSize : function() {
         var me = this,
             targetEl = me.getTargetEl();
 
-        if (typeof(me.__initComponent__) != 'undefined') {
+        if (me.flashContainerID && me.chartRendered) {
             zingchart.exec(me.flashContainerID, 'resize', {
                 width  : targetEl.getWidth(),
                 height : targetEl.getHeight()
             });
-        }
-        else {
-            me.__initComponent__ = true;
         }
     },
 
@@ -105,11 +114,12 @@ Ext.define('Ext.ux.zingchart.ChartBase', {
         // (effectively a setTimeout kind of thing)
         Ext.Function.defer(function() {
             var chartID = me.flashContainerID,
-                contentEl = me.getTargetEl();
+                contentEl = me.getTargetEl(),
+                chartJson = me.chartData && Ext.encode(me.prepareData(me.chartData));
 
             zingchart.render({
                 dataurl     : me.dataurl,
-                data        : me.chartData && Ext.encode(me.prepareData(me.chartData)),
+                data        : chartJson,
                 id          : chartID,
                 output      : me.output,
                 width       : contentEl.getWidth(),
@@ -124,9 +134,11 @@ Ext.define('Ext.ux.zingchart.ChartBase', {
                 }
             });
 
+            me.chartRendered = true;
+
             me.un('afterlayout', me.onFirstLayout, me);
             me.on('afterlayout', me.onAfterLayout, me);
-        }, 1);
+        }, 10);
     },
 
     onAfterLayout : function() {
@@ -149,24 +161,26 @@ Ext.define('Ext.ux.zingchart.ChartBase', {
                     return;
                 }
 
-                var values = series.values = [],
-                    xField = series.xField,
-                    yField = series.yField || 'value';
+                if (series.store) {
+                    var values = series.values = [],
+                        xField = series.xField,
+                        yField = series.yField || 'value';
 
-                series.store.each(function(record) {
-                    if (series.converter) {
-                        var res = series.converter(record, series.store.indexOf(record));
-                        values.push(res);
-                        return;
-                    }
+                    series.store.each(function(record) {
+                        if (series.converter) {
+                            var res = series.converter(record, series.store.indexOf(record));
+                            values.push(res);
+                            return;
+                        }
 
-                    if (xField) {
-                        values.push([ record.get(xField), record.get(yField) ]);
-                        return;
-                    }
-                    values.push(record.get(yField));
-                });
+                        if (xField) {
+                            values.push([ record.get(xField), record.get(yField) ]);
+                            return;
+                        }
+                        values.push(record.get(yField));
+                    });
 
+                }
                 delete series.store;
                 delete series.xField;
                 delete series.yField;
@@ -188,11 +202,88 @@ Ext.define('Ext.ux.zingchart.ChartBase', {
             data : this.prepareData(data)
         });
     },
-    destroy      : function() {
-        /* added by A.Z. on 29.03.2011 */
-        this.zcdestroy();
 
-        this.callparent();
+    onStoreLoadSetChartData : function(store) {
+        var me = this;
+
+        //        var chartData = {
+        //            graphset : [
+        //                {
+        //                    type      : "line",
+        //                    "scale-x" : {
+        //                        "labels"    : months
+        //                    },
+        //                    series    : [
+        //                        {
+        //                            text    : "Apples",
+        //                            animate : true,
+        //                            effect  : 1,
+        //                            xField  : 'month',
+        //                            yField  : 'salesVolume'
+        //                        }
+        //                    ]
+        //                }
+        //            ]
+        //        };
+
+        var newSeries = [],
+            chartConfig = Ext.clone(me.chartConfig);
+
+        Ext.each(chartConfig.series, function(seriesItem, i) {
+            var item = Ext.clone(seriesItem);
+            item.values = me.extractKeyFromStore(item.dataIndex);
+
+            newSeries[i] = item;
+        });
+
+        chartConfig.series = newSeries;
+
+        chartConfig['scale-x'] = {
+            labels : me.extractKeyFromStore(chartConfig.labelField)
+        };
+
+        var chartData = {
+            graphset : [ chartConfig ]
+        };
+
+
+        if (me.chartRendered) {
+            me.setChartData(chartData);
+        }
+        else {
+            me.chartData = chartData;
+        }
+    },
+
+    extractKeyFromStore : function(key) {
+        var data = [];
+
+        this.store.each(function(record, i) {
+            data[i] = record.get(key);
+        });
+
+        return data;
+    },
+
+    onStoreUpdate : function(store, record) {
+        var me = this;
+
+        Ext.each(me.chartConfig.series, function(series, index) {
+            me.setnodevalue({
+                plotindex : index,
+                nodeindex : store.indexOf(record),
+                value     : record.get(series.dataIndex)
+            });
+        });
+    },
+
+    destroy : function() {
+        var me = this;
+        if (me.store) {
+            me.store.un('load', me.onStoreLoadSetChartData, me);
+        }
+        me.zcdestroy();
+
+        me.callparent();
     }
-})
-;
+});
